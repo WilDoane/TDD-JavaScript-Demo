@@ -1,0 +1,3 @@
+This is the version of a TDD-based stack demo that Brian and I developed while at Panera.
+
+The testing framework was based loosely on the example in Chapter 1 of Test-Driven JavaScript Development by Christian Johansen.
