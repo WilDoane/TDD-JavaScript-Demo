@@ -224,7 +224,7 @@ YUI().use('node', 'console', 'test', function(Y) {
     reporter.addField("authorsName", authorsNameExists() ? authorsName : "UNKNOWN AUTHOR");
     
     reporter.report(testResults);
-    reporter.destroy();
+    //reporter.destroy();
   }
   
   function authorsNameExists() {
