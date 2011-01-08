@@ -1,4 +1,8 @@
-stack = new Array();
+var stack = new Array();
+
+function stackInit() {
+  stack = new Array();
+}
 
 function stackSize() {
   return stack.length;
