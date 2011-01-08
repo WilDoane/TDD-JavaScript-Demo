@@ -1,3 +1,4 @@
+var studentName = "William Doane";
 var stack = new Array();
 
 function stackInit() {

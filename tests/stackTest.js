@@ -15,7 +15,13 @@ YUI().use('node', 'console', 'test', function(Y) {
     "test that the variable studentName contains at least both a first and a last name" :
     function () {
       var re = /^[A-Za-z\']+\s+[A-Za-z\']+/;
-      Y.Assert.areEqual( true, studentName.match(re), "The variable studentName must have a value of 'Yourfirstname Yourlastname' (insert your own name)" );
+      var sourceString = "";
+      
+      if ( "string" == typeof(studentName) ) {
+        var sourceString = studentName;
+      }
+      
+      Y.Assert.isNotNull( sourceString.match(re), "The variable studentName must have a value of 'Yourfirstname Yourlastname' (insert your own name)" );
     },
 
     "test that a function named stackInit exists in a file named stack.js" :
