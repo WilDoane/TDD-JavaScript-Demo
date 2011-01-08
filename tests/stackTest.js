@@ -34,7 +34,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that a new stack is of length 0" : 
     function () {
-      Y.Assert.areEqual( stackSize(), 0, "If no elements have been added to the stack, the stack should be of zero length" );
+      Y.Assert.areEqual( stackSize(), 0, "If no elements have been added to the stack, stackSize() should return 0" );
     },
 
     "test that a function named stackAdd exists" :
@@ -46,7 +46,7 @@ YUI().use('node', 'console', 'test', function(Y) {
     function () {
       stackAdd("a");
 
-      Y.Assert.areEqual( stackSize(), 1, "If a stack has 1 element, it should be of length 1" );
+      Y.Assert.areEqual( stackSize(), 1, "If a stack has 1 element, stackSize() should return 1" );
     },
 
     "test that a function named stackGet exists" :
@@ -59,7 +59,7 @@ YUI().use('node', 'console', 'test', function(Y) {
       stackAdd("a");
       stackAdd("b");
 
-      Y.Assert.areEqual( stackGet(), "b", "Last element added should be returned" );
+      Y.Assert.areEqual( stackGet(), "b", "Last element added should be returned by stackGet()" );
     },
 
     "test that stackGet removes the returned element from the stack" :
@@ -68,9 +68,9 @@ YUI().use('node', 'console', 'test', function(Y) {
       stackAdd("b");
       stackAdd("c");
 
-      Y.Assert.areEqual( stackGet(), "c", "Last element added should be returned" );
-      Y.Assert.areEqual( stackGet(), "b", "next to last element added should be returned" );
-      Y.Assert.areEqual( stackGet(), "a", "first element added should be returned" );
+      Y.Assert.areEqual( stackGet(), "c", "Last element added should be returned by stackGet()" );
+      Y.Assert.areEqual( stackGet(), "b", "next to last element added should be returned by a second stackGet()" );
+      Y.Assert.areEqual( stackGet(), "a", "first element added should be returned by a third stackGet()" );
     },
 
     "test that stacks can contain 2 elements with the same value" :
