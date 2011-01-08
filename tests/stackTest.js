@@ -57,6 +57,15 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.areEqual( 1, stackSize(), "If a stack has 1 element, stackSize() should return 1" );
     },
 
+    "test that a stack with 3 elements is of length 3" :
+    function () {
+      stackAdd("a");
+      stackAdd("b");
+      stackAdd("c");
+
+      Y.Assert.areEqual( 3, stackSize(), "If a stack has 3 elements, stackSize() should return 3" );
+    },
+
     "test that a function named stackGet exists" :
     function () {
       Y.Assert.areEqual( "function", typeof(stackGet), "You need a function named stackGet with no input parameters" );
@@ -81,15 +90,15 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.areEqual( "a", stackGet(), "first element added should be returned by a third stackGet()" );
     },
 
-    "test that stacks can contain 2 elements with the same value" :
+    "test that stacks can contain 2 distinct elements with the same value" :
     function () {
       stackAdd("a");
       stackAdd("b");
       stackAdd("a");
 
-      Y.Assert.areEqual( "a", stackGet(), "Last element added should be returned" );
-      Y.Assert.areEqual( "b", stackGet(), "next to last element added should be returned" );
-      Y.Assert.areEqual( "a", stackGet(), "first element added should be returned" );
+      Y.Assert.areEqual( "a", stackGet(), "First call to stackGet() should return last element added" );
+      Y.Assert.areEqual( "b", stackGet(), "Second call to stackGet() should return second to last element added" );
+      Y.Assert.areEqual( "a", stackGet(), "Third call to stackGet() should return third to last element added" );
     },
 
     "test that stacks can contain string, number, boolean, and object elements and preserve data types" :
@@ -134,9 +143,15 @@ YUI().use('node', 'console', 'test', function(Y) {
       stackAdd("b");
       stackAdd("c");
 
-      Y.Assert.areEqual( "c", stackPeek(), "Last element added should be returned" );
-      Y.Assert.areEqual( "c", stackPeek(), "Last element added should be returned" );
-      Y.Assert.areEqual( "c", stackPeek(), "Last element added should be returned" );
+      Y.Assert.areEqual( "c", stackPeek(), "stackPeek() should return the last element added without removing it from the stack" );
+      Y.Assert.areEqual( "c", stackPeek(), "stackPeek() should return the last element added without removing it from the stack" );
+      Y.Assert.areEqual( "c", stackPeek(), "stackPeek() should return the last element added without removing it from the stack" );
+    },
+
+    "test that stackPeek() and stackPeek(int) return undefined given an empty stack" :
+    function () {
+      Y.Assert.areEqual( undefined, stackPeek(), "stackPeek() should return undefined for an empty stack" );
+      Y.Assert.areEqual( undefined, stackPeek(5), "stackPeek(int) should return undefined for an empty stack" );
     },
 
     "test that stackPeek allows random access to elements of the stack" :
@@ -145,9 +160,10 @@ YUI().use('node', 'console', 'test', function(Y) {
       stackAdd("b");
       stackAdd("c");
 
-      Y.Assert.areEqual( "a", stackPeek(0), "0th element should be a" );
-      Y.Assert.areEqual( "b", stackPeek(1), "1th element should be b" );
-      Y.Assert.areEqual( "c", stackPeek(2), "2th element should be c" );
+      Y.Assert.areEqual( "a", stackPeek(0), "0th element should be 'a'" );
+      Y.Assert.areEqual( "b", stackPeek(1), "1th element should be 'b'" );
+      Y.Assert.areEqual( "c", stackPeek(2), "2th element should be 'c'" );
+      Y.Assert.areEqual( "a", stackPeek(0), "0th element should be 'a'" );
     },
 
     "test that a function named stackContains exists" :
@@ -157,9 +173,12 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that stackContains returns false, if the stack is empty" :
     function () {
-      Y.Assert.areEqual( false, stackContains("a"), "a should not be in the stack" );
-      Y.Assert.areEqual( false, stackContains("b"), "b should not be in the stack" );
-      Y.Assert.areEqual( false, stackContains("c"), "c should not be in the stack" );
+      Y.Assert.areEqual( false, stackContains("a"), "'a' should not be in the stack" );
+      Y.Assert.areEqual( false, stackContains("b"), "'b' should not be in the stack" );
+      Y.Assert.areEqual( false, stackContains("c"), "'c' should not be in the stack" );
+      Y.Assert.areEqual( false, stackContains(1), "1 should not be in the stack" );
+      Y.Assert.areEqual( false, stackContains(2), "2 should not be in the stack" );
+      Y.Assert.areEqual( false, stackContains(3), "3 should not be in the stack" );
     },
 
     "test that stackContains returns true, if the sought element is in the stack" :
@@ -171,9 +190,9 @@ YUI().use('node', 'console', 'test', function(Y) {
       stackAdd(2);
       stackAdd(3);
 
-      Y.Assert.areEqual( true, stackContains("a"), "a should be in the stack" );
-      Y.Assert.areEqual( true, stackContains("b"), "b should be in the stack" );
-      Y.Assert.areEqual( true, stackContains("c"), "c should be in the stack" );
+      Y.Assert.areEqual( true, stackContains("a"), "'a' should be in the stack" );
+      Y.Assert.areEqual( true, stackContains("b"), "'b' should be in the stack" );
+      Y.Assert.areEqual( true, stackContains("c"), "'c' should be in the stack" );
       Y.Assert.areEqual( true, stackContains(1), "1 should be in the stack" );
       Y.Assert.areEqual( true, stackContains(2), "2 should be in the stack" );
       Y.Assert.areEqual( true, stackContains(3), "3 should be in the stack" );
@@ -189,7 +208,7 @@ YUI().use('node', 'console', 'test', function(Y) {
       stackAdd(3);
 
       Y.Assert.areEqual( false, stackContains(""), "the empty string should not be in the stack" );
-      Y.Assert.areEqual( false, stackContains("z"), "z should not be in the stack" );
+      Y.Assert.areEqual( false, stackContains("z"), "'z' should not be in the stack" );
       Y.Assert.areEqual( false, stackContains(4), "4 should not be in the stack" );
       Y.Assert.areEqual( false, stackContains(undefined), "undefined should not be in the stack" );
       Y.Assert.areEqual( false, stackContains(null), "null should not be in the stack" );
