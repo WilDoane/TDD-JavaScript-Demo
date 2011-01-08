@@ -7,9 +7,9 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     name: "Test that necessary conditions for running tests have been met",
     
-    "test that a method named stackInit exists" :
+    "test that a method named stackInit exists in a file named stack.js" :
     function () {
-      Y.Assert.areEqual( typeof(stackInit), "function", "You need a function named stackInit with no input parameters" );
+      Y.Assert.areEqual( typeof(stackInit), "function", "You need a function named stackInit with no input parameters defined in stack.js located in the src folder" );
     }
 
   });
