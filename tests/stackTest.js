@@ -7,7 +7,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     name: "Test that necessary conditions for running tests have been met",
     
-    "test that a method named stackInit exists in a file named stack.js" :
+    "test that a function named stackInit exists in a file named stack.js" :
     function () {
       Y.Assert.areEqual( typeof(stackInit), "function", "You need a function named stackInit with no input parameters defined in stack.js located in the src folder" );
     }
@@ -27,7 +27,7 @@ YUI().use('node', 'console', 'test', function(Y) {
     function () {
     },
 
-    "test that a method named stackSize exists" : 
+    "test that a function named stackSize exists" : 
     function () {
       Y.Assert.areEqual( typeof(stackSize), "function", "You need a function named stackSize with no input parameters" );
     },
@@ -37,7 +37,7 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.areEqual( stackSize(), 0, "If no elements have been added to the stack, the stack should be of zero length" );
     },
 
-    "test that a method named stackAdd exists" :
+    "test that a function named stackAdd exists" :
     function () {
       Y.Assert.areEqual( typeof(stackAdd), "function", "You need a function named stackAdd with one input parameter, the element to add" );
     },
@@ -49,7 +49,7 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.areEqual( stackSize(), 1, "If a stack has 1 element, it should be of length 1" );
     },
 
-    "test that a method named stackGet exists" :
+    "test that a function named stackGet exists" :
     function () {
       Y.Assert.areEqual( typeof(stackGet), "function", "You need a function named stackGet with no input parameters" );
     },
@@ -59,7 +59,7 @@ YUI().use('node', 'console', 'test', function(Y) {
       stackAdd("a");
       stackAdd("b");
 
-      Y.Assert.areEqual( stackGet(), "b", "Last item added should be returned" );
+      Y.Assert.areEqual( stackGet(), "b", "Last element added should be returned" );
     },
 
     "test that stackGet removes the returned element from the stack" :
@@ -115,7 +115,7 @@ YUI().use('node', 'console', 'test', function(Y) {
       
      },
 
-    "test that a method named stackPeek exists" :
+    "test that a function named stackPeek exists" :
     function () {
       Y.Assert.areEqual( typeof(stackPeek), "function", "You need a function named stackPeek with one optional input parameter, the element index to be returned" );
     },
@@ -126,9 +126,9 @@ YUI().use('node', 'console', 'test', function(Y) {
       stackAdd("b");
       stackAdd("c");
 
-      Y.Assert.areEqual( stackPeek(), "c", "Last item added should be returned" );
-      Y.Assert.areEqual( stackPeek(), "c", "Last item added should be returned" );
-      Y.Assert.areEqual( stackPeek(), "c", "Last item added should be returned" );
+      Y.Assert.areEqual( stackPeek(), "c", "Last element added should be returned" );
+      Y.Assert.areEqual( stackPeek(), "c", "Last element added should be returned" );
+      Y.Assert.areEqual( stackPeek(), "c", "Last element added should be returned" );
     },
 
     "test that stackPeek allows random access to elements of the stack" :
@@ -137,12 +137,12 @@ YUI().use('node', 'console', 'test', function(Y) {
       stackAdd("b");
       stackAdd("c");
 
-      Y.Assert.areEqual( stackPeek(0), "a", "0th item should be a" );
-      Y.Assert.areEqual( stackPeek(1), "b", "1th item should be b" );
-      Y.Assert.areEqual( stackPeek(2), "c", "2th item should be c" );
+      Y.Assert.areEqual( stackPeek(0), "a", "0th element should be a" );
+      Y.Assert.areEqual( stackPeek(1), "b", "1th element should be b" );
+      Y.Assert.areEqual( stackPeek(2), "c", "2th element should be c" );
     },
 
-    "test that a method named stackContains exists" :
+    "test that a function named stackContains exists" :
     function () {
       Y.Assert.areEqual( typeof(stackContains), "function", "You need a function named stackContains with one input parameter, the element for which to search" );
     },
