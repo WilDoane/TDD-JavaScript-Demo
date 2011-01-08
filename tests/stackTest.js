@@ -122,7 +122,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
       result = stackGet();
       Y.Assert.areEqual( "a", result, "element should be the boolean value true" );
-      Y.Assert.areEqual( "string" typeof(result), "element should be of type string" );
+      Y.Assert.areEqual( "string", typeof(result), "element should be of type string" );
       
      },
 
