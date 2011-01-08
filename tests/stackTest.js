@@ -3,34 +3,9 @@ YUI().use('node', 'console', 'test', function(Y) {
  
   // Test available, and ready for use.
 
-  var foundationTests = new Y.Test.Case({
-
-    name: "Test that necessary conditions for running tests have been met",
-    
-    "test that a variable named authorsName exists in a file named stack.js" :
-    function () {
-      Y.Assert.areEqual( "string", typeof(authorsName), "You need a variable named authorsName defined in stack.js located in the src folder" );
-    },
-
-    "test that the variable authorsName contains at least both a first and a last name" :
-    function () {
-      var re = /^[A-Za-z\']+\s+[A-Za-z\']+/;
-      
-      var sourceString = authorsNameExists() ? authorsName : "";
-      
-      Y.Assert.isNotNull( sourceString.match(re), "The variable authorsName must have a value of 'Yourfirstname Yourlastname' (insert your own name)" );
-    },
-
-    "test that a function named stackInit exists in a file named stack.js" :
-    function () {
-      Y.Assert.areEqual( true, stackInitExists(), "You need a function named stackInit with no input parameters defined in stack.js located in the src folder" );
-    }
-
-  });
-
   var unitTests = new Y.Test.Case({
  
-    name: "Testing Stack",
+    name: "Testing stack implementation",
 
     setUp :
     function () {
@@ -39,6 +14,25 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     tearDown :
     function () {
+    },
+
+    "test that a global variable named authorsName exists" :
+    function () {
+      Y.Assert.areEqual( "string", typeof(authorsName), "You need a variable named authorsName defined in stack.js located in the src folder" );
+    },
+
+    "test that the variable authorsName follows the proper format" :
+    function () {
+      var re = /^[A-Za-z\']+\s+[A-Za-z\']+/;
+      
+      var sourceString = authorsNameExists() ? authorsName : "";
+      
+      Y.Assert.isNotNull( sourceString.match(re), "The variable authorsName must have a value of 'Yourfirstname Yourlastname' (insert your own name)" );
+    },
+
+    "test that a function exists for initializing a stack" :
+    function () {
+      Y.Assert.areEqual( true, stackInitExists(), "You need a function named stackInit with no input parameters defined in stack.js located in the src folder" );
     },
 
     "test that a function named stackSize exists" : 
@@ -215,7 +209,6 @@ YUI().use('node', 'console', 'test', function(Y) {
 
   r.render("#testReport");
   
-  Y.Test.Runner.add(foundationTests);
   Y.Test.Runner.add(unitTests);
 
   Y.Test.Runner.subscribe(Y.Test.Runner.COMPLETE_EVENT, logResultsToServer);
