@@ -34,7 +34,6 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that a new stack is of length 0" : 
     function () {
-      console.log(stack);
       Y.Assert.areEqual( stackSize(), 0, "If no elements have been added to the stack, the stack should be of zero length" );
     },
 
@@ -74,6 +73,37 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.areEqual( stackGet(), "a", "first element added should be returned" );
     },
 
+    "test that stacks can contain string, number, boolean, and object elements and preserve data types" :
+    function () {
+      stackAdd("a");
+      stackAdd(1);
+      stackAdd(true);
+      stackAdd(false);
+      var objElement = {};
+      stackAdd( objElement );
+      
+      var result = stackGet();
+      Y.Assert.areEqual( result, objElement, "element should be an empty object {}" );
+      Y.Assert.areEqual( typeof(result), "object", "element should be of type object" );
+
+      result = stackGet();
+      Y.Assert.areEqual( result, false, "element should be the boolean value false" );
+      Y.Assert.areEqual( typeof(result), "boolean", "element should be of type boolean" );
+
+      result = stackGet();
+      Y.Assert.areEqual( result, true, "element should be the boolean value true" );
+      Y.Assert.areEqual( typeof(result), "boolean", "element should be of type boolean" );
+
+      result = stackGet();
+      Y.Assert.areEqual( result, 1, "element should be the number value 1" );
+      Y.Assert.areEqual( typeof(result), "number", "element should be of type number" );
+
+      result = stackGet();
+      Y.Assert.areEqual( result, "a", "element should be the boolean value true" );
+      Y.Assert.areEqual( typeof(result), "string", "element should be of type string" );
+      
+     },
+
     "test that a method named stackPeek exists" :
     function () {
       Y.Assert.areEqual( typeof(stackPeek), "function", "You need a function named stackPeek with one optional input parameter, the element index to be returned" );
@@ -106,29 +136,49 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.areEqual( typeof(stackContains), "function", "You need a function named stackContains with one input parameter, the element for which to search" );
     },
 
-    "test that stackContains finds an element, if that element is in the stack" :
+    "test that stackContains returns false, if the stack is empty" :
+    function () {
+      Y.Assert.areEqual( stackContains("a"), false, "a should not be in the stack" );
+      Y.Assert.areEqual( stackContains("b"), false, "b should not be in the stack" );
+      Y.Assert.areEqual( stackContains("c"), false, "c should not be in the stack" );
+    },
+
+    "test that stackContains returns true, if the sought element is in the stack" :
     function () {
       stackAdd("a");
       stackAdd("b");
       stackAdd("c");
+      stackAdd(1);
+      stackAdd(2);
+      stackAdd(3);
 
       Y.Assert.areEqual( stackContains("a"), true, "a should be in the stack" );
       Y.Assert.areEqual( stackContains("b"), true, "b should be in the stack" );
       Y.Assert.areEqual( stackContains("c"), true, "c should be in the stack" );
+      Y.Assert.areEqual( stackContains(1), true, "1 should be in the stack" );
+      Y.Assert.areEqual( stackContains(2), true, "2 should be in the stack" );
+      Y.Assert.areEqual( stackContains(3), true, "3 should be in the stack" );
     },
 
-    "test that stackContains does not find an element, if that element is not in the stack" :
+    "test that stackContains returns false, if the sought element is not in the stack" :
     function () {
       stackAdd("a");
       stackAdd("b");
       stackAdd("c");
+      stackAdd(1);
+      stackAdd(2);
+      stackAdd(3);
 
+      Y.Assert.areEqual( stackContains(""), false, "the empty string should not be in the stack" );
       Y.Assert.areEqual( stackContains("z"), false, "z should not be in the stack" );
+      Y.Assert.areEqual( stackContains(4), false, "4 should not be in the stack" );
+      Y.Assert.areEqual( stackContains(undefined), false, "undefined should not be in the stack" );
+      Y.Assert.areEqual( stackContains(null), false, "null should not be in the stack" );
     },
 
     "test that stackGet should return undefined given an empty stack" :
     function () {
-      Y.Assert.areEqual( stackGet(), undefined, "getting an empty stack is undefined" );
+      Y.Assert.areEqual( stackGet(), undefined, "getting from an empty stack is undefined" );
     }
 
   });
