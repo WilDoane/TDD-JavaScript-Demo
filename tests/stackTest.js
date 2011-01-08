@@ -218,12 +218,13 @@ YUI().use('node', 'console', 'test', function(Y) {
   function logResultsToServer(data){
     //get results
     var testResults = Y.Test.Runner.getResults();
-    
+  
     var reporter = new Y.Test.Reporter("http://nwghost.com/tdd-collector.php", Y.Test.Format.TAP);
-    
+  
     reporter.addField("authorsName", authorsNameExists() ? authorsName : "UNKNOWN AUTHOR");
     
     reporter.report(testResults);
+    reporter.destroy();
   }
   
   function authorsNameExists() {
