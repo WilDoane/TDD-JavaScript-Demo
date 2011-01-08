@@ -1,4 +1,4 @@
-var author = "William Doane";
+var authorsName = "William Doane";
 var stack = new Array();
 
 function stackInit() {

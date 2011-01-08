@@ -7,26 +7,23 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     name: "Test that necessary conditions for running tests have been met",
     
-    "test that a variable named studentName exists in a file named stack.js" :
+    "test that a variable named authorsName exists in a file named stack.js" :
     function () {
-      Y.Assert.areEqual( "string", typeof(author), "You need a variable named studentName defined in stack.js located in the src folder" );
+      Y.Assert.areEqual( "string", typeof(authorsName), "You need a variable named authorsName defined in stack.js located in the src folder" );
     },
 
-    "test that the variable studentName contains at least both a first and a last name" :
+    "test that the variable authorsName contains at least both a first and a last name" :
     function () {
       var re = /^[A-Za-z\']+\s+[A-Za-z\']+/;
-      var sourceString = "";
       
-      if ( "string" == typeof(author) ) {
-        var sourceString = author;
-      }
+      var sourceString = authorsNameExists() ? authorsName : "";
       
-      Y.Assert.isNotNull( sourceString.match(re), "The variable studentName must have a value of 'Yourfirstname Yourlastname' (insert your own name)" );
+      Y.Assert.isNotNull( sourceString.match(re), "The variable authorsName must have a value of 'Yourfirstname Yourlastname' (insert your own name)" );
     },
 
     "test that a function named stackInit exists in a file named stack.js" :
     function () {
-      Y.Assert.areEqual( "function", typeof(stackInit), "You need a function named stackInit with no input parameters defined in stack.js located in the src folder" );
+      Y.Assert.areEqual( true, stackInitExists(), "You need a function named stackInit with no input parameters defined in stack.js located in the src folder" );
     }
 
   });
@@ -37,7 +34,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     setUp :
     function () {
-      stackInit();
+      stackInitExists() ? stackInit() : null;
     },
 
     tearDown :
@@ -213,19 +210,35 @@ YUI().use('node', 'console', 'test', function(Y) {
 
 
   var r = new Y.Console({
-      newestOnTop: false 
+      newestOnTop: false
   });  
 
   r.render("#testReport");
   
   Y.Test.Runner.add(foundationTests);
   Y.Test.Runner.add(unitTests);
-  Y.Test.Runner.run();
 
-  //get results
-  var testResults = Y.Test.Runner.getResults(Y.Test.Format.TAP);
+  Y.Test.Runner.subscribe(Y.Test.Runner.COMPLETE_EVENT, logResultsToServer);
   
-  var reporter = new Y.Test.Reporter("http://nwghost.com/tdd-collector.php");
-  reporter.report(testResults);
+  Y.Test.Runner.run();
+  
+  function logResultsToServer(data){
+    //get results
+    var testResults = Y.Test.Runner.getResults();
+    
+    var reporter = new Y.Test.Reporter("http://nwghost.com/tdd-collector.php", Y.Test.Format.TAP);
+    
+    reporter.addField("authorsName", authorsNameExists() ? authorsName : "UNKNOWN AUTHOR");
+    
+    reporter.report(testResults);
+  }
+  
+  function authorsNameExists() {
+    return ( "string" == typeof(authorsName) ) ? true : false;
+  }
+
+  function stackInitExists() {
+    return ( "function" == typeof(stackInit) ) ? true : false;
+  }
   
  });
