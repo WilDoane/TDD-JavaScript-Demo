@@ -9,7 +9,7 @@ YUI().use('node', 'console', 'test', function(Y) {
     
     "test that a variable named studentName exists in a file named stack.js" :
     function () {
-      Y.Assert.areEqual( "string", typeof(studentName), "You need a variable named studentName defined in stack.js located in the src folder" );
+      Y.Assert.areEqual( "string", typeof(author), "You need a variable named studentName defined in stack.js located in the src folder" );
     },
 
     "test that the variable studentName contains at least both a first and a last name" :
@@ -17,8 +17,8 @@ YUI().use('node', 'console', 'test', function(Y) {
       var re = /^[A-Za-z\']+\s+[A-Za-z\']+/;
       var sourceString = "";
       
-      if ( "string" == typeof(studentName) ) {
-        var sourceString = studentName;
+      if ( "string" == typeof(author) ) {
+        var sourceString = author;
       }
       
       Y.Assert.isNotNull( sourceString.match(re), "The variable studentName must have a value of 'Yourfirstname Yourlastname' (insert your own name)" );
