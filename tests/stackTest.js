@@ -62,13 +62,24 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.areEqual( stackGet(), "b", "Last item added should be returned" );
     },
 
-    "test that stackGet removes elements from the stack" :
+    "test that stackGet removes the returned element from the stack" :
     function () {
       stackAdd("a");
       stackAdd("b");
       stackAdd("c");
 
       Y.Assert.areEqual( stackGet(), "c", "Last element added should be returned" );
+      Y.Assert.areEqual( stackGet(), "b", "next to last element added should be returned" );
+      Y.Assert.areEqual( stackGet(), "a", "first element added should be returned" );
+    },
+
+    "test that stacks can contain 2 elements with the same value" :
+    function () {
+      stackAdd("a");
+      stackAdd("b");
+      stackAdd("a");
+
+      Y.Assert.areEqual( stackGet(), "a", "Last element added should be returned" );
       Y.Assert.areEqual( stackGet(), "b", "next to last element added should be returned" );
       Y.Assert.areEqual( stackGet(), "a", "first element added should be returned" );
     },
