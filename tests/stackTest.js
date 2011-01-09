@@ -18,7 +18,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that a global variable named authorsName exists" :
     function () {
-      Y.Assert.areEqual( "string", typeof(authorsName), "You need a variable named authorsName defined in stack.js located in the src folder" );
+      Y.assert( "string" === typeof(authorsName), "You need a variable named authorsName defined in stack.js located in the src folder" );
     },
 
     "test that the variable authorsName follows the proper format" :
@@ -37,7 +37,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that a function named stackSize exists" : 
     function () {
-      Y.Assert.areEqual( "function", typeof(stackSize), "You need a function named stackSize with no input parameters" );
+      Y.assert( "function" === typeof(stackSize), "You need a function named stackSize with no input parameters" );
     },
 
     "test that a new stack is of length 0" : 
@@ -47,7 +47,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that a function named stackAdd exists" :
     function () {
-      Y.Assert.areEqual( "function", typeof(stackAdd), "You need a function named stackAdd with one input parameter, the element to add" );
+      Y.assert( "function" === typeof(stackAdd), "You need a function named stackAdd with one input parameter, the element to add" );
     },
 
     "test that a stack with 1 element is of length 1" :
@@ -68,7 +68,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that a function named stackGet exists" :
     function () {
-      Y.Assert.areEqual( "function", typeof(stackGet), "You need a function named stackGet with no input parameters" );
+      Y.assert( "function" === typeof(stackGet), "You need a function named stackGet with no input parameters" );
     },
 
     "test that stackGet returns the last element added" :
@@ -134,7 +134,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that a function named stackPeek exists" :
     function () {
-      Y.Assert.areEqual( "function", typeof(stackPeek), "You need a function named stackPeek with one optional input parameter, the element index to be returned" );
+      Y.assert( "function" === typeof(stackPeek), "You need a function named stackPeek with one optional input parameter, the element index to be returned" );
     },
 
     "test that stackPeek does not remove elements from the stack" :
@@ -168,7 +168,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that a function named stackContains exists" :
     function () {
-      Y.Assert.areEqual( "function", typeof(stackContains), "You need a function named stackContains with one input parameter, the element for which to search" );
+      Y.assert( "function" === typeof(stackContains), "You need a function named stackContains with one input parameter, the element for which to search" );
     },
 
     "test that stackContains returns false, if the stack is empty" :
