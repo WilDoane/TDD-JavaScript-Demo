@@ -18,12 +18,12 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that a global variable named authorsName exists" :
     function () {
-      Y.assert( "string" === typeof(authorsName), "You need a variable named authorsName defined in stack.js located in the src folder" );
+      Y.assert( authorsNameExists(), "You need a variable named authorsName defined in stack.js located in the src folder" );
     },
 
     "test that the variable authorsName follows the proper format" :
     function () {
-      var re = /^[A-Za-z\']+\s+[A-Za-z\']+/;
+      var re = /^[A-Za-z\'\-]+\s+[A-Za-z\'\-]+/;
       
       var sourceString = authorsNameExists() ? authorsName : "";
       
@@ -253,11 +253,11 @@ YUI().use('node', 'console', 'test', function(Y) {
   }
   
   function authorsNameExists() {
-    return ( "string" == typeof(authorsName) ) ? true : false;
+    return ( "string" === typeof(authorsName) ) ? true : false;
   }
 
   function stackInitExists() {
-    return ( "function" == typeof(stackInit) ) ? true : false;
+    return ( "function" === typeof(stackInit) ) ? true : false;
   }
   
  });
