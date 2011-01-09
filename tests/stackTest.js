@@ -32,7 +32,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that function stackInit is properly defined" :
     function () {
-      Y.Assert.areEqual( true, stackInitExists(), "You need a function named stackInit defined in stack.js located in the src folder" );
+      Y.assert( "function" === typeof(stackInit), "You need a function named stackInit defined in stack.js located in the src folder" );
       Y.Assert.areEqual( 0, stackInit.length, "stackInit must have no input parameter" );
      },
 
