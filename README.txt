@@ -23,7 +23,7 @@ At some point, while tests are GREEN, it may be desirable to change the organiza
 
 This cycle– RED-GREEN-REFACTOR– is at the heart of test-driven development. It's a way of requiring programmers to think about how their code should behave before they begin to write the code itself. It provides a structure within which we are free to improve our code, so long as our tests continue to pass.
 
-TDL affords instructors the benefit of being able to encode their expectations for coding projects and affords students the ability to get immediate feedback on the state of their code at any time of day or night. Students need not wonder whether their code meets expectations– they can simply run the tests. As a benefit, students develop habits valuable in collaborative coding contexts such as testing, not breaking the build, etc.
+TDL affords instructors the benefit of being able to encode their expectations for programming projects (thus providing an automatic assessment tool when students submit their work) and affords students the ability to get immediate feedback on the state of their code at any time of day or night. Students need not wonder whether their code meets expectations– they can simply run the tests. As a benefit, students develop habits valuable in collaborative coding contexts such as testing, not breaking the build, etc.
 
 
 THIS REPOSITORY
