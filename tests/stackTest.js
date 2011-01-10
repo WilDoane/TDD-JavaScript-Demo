@@ -182,6 +182,11 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.areEqual( 1, stackContains.length, "stackContains must have one input parameter, the element for which to search" );
     },
 
+    "test that stackGet returns undefined given an empty stack" :
+    function () {
+      Y.Assert.areEqual( undefined, stackGet(), "stackGet() should return undefined for an empty stack" );
+    },
+
     "test that stackContains returns false, if the stack is empty" :
     function () {
       Y.Assert.areEqual( false, stackContains("a"), "'a' should not be in the stack" );
@@ -224,11 +229,6 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.areEqual( false, stackContains(undefined), "undefined should not be in the stack" );
       Y.Assert.areEqual( false, stackContains(null), "null should not be in the stack" );
     },
-
-    "test that stackGet returns undefined given an empty stack" :
-    function () {
-      Y.Assert.areEqual( undefined, stackGet(), "stackGet() should return undefined for an empty stack" );
-    }
 
   });
 
