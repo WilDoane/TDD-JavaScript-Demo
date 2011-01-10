@@ -18,7 +18,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that a global variable named authorsName exists" :
     function () {
-      Y.assert( authorsNameExists(), "You need a variable named authorsName defined in stack.js located in the src folder" );
+      Y.assert( authorsNameExists(), "You need a global variable named authorsName defined in stack.js located in the src folder" );
     },
 
     "test that the variable authorsName follows the proper format" :
@@ -30,16 +30,21 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.isNotNull( sourceString.match(re), "The variable authorsName must have a value of 'Yourfirstname Yourlastname' (insert your own name)" );
     },
 
-    "test that function stackInit is properly defined" :
+    "test that function stackInit is declared" :
     function () {
-      Y.assert( "function" === typeof(stackInit), "You need a function named stackInit defined in stack.js located in the src folder" );
+      Y.assert( "function" === typeof(stackInit), "You need a function that will allow users of your code to initialize a new stack. This function must be named stackInit defined in stack.js located in the src folder" );
       Y.Assert.areEqual( 0, stackInit.length, "stackInit must have no input parameter" );
      },
 
-    "test that function stackSize is properly defined" : 
+    "test that function stackSize is declared" : 
     function () {
-      Y.assert( "function" === typeof(stackSize), "You need a function named stackSize" );
+      Y.assert( "function" === typeof(stackSize), "You need a function named stackSize that will allow users of your code to determine how many elements are in the stack" );
       Y.Assert.areEqual( 0, stackSize.length, "stackSize must have no input parameter" );
+    },
+
+    "test that stackSize returns a numeric value" : 
+    function () {
+      Y.Assert.isNumber( stackSize(), "stackSize() should return a number" );
     },
 
     "test that a new stack is of length 0" : 
@@ -47,7 +52,7 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.areEqual( 0, stackSize(), "If no elements have been added to the stack, stackSize() should return 0" );
     },
 
-    "test that function stackAdd is properly defined" :
+    "test that function stackAdd is declared" :
     function () {
       Y.assert( "function" === typeof(stackAdd), "You need a function named stackAdd" );
       Y.Assert.areEqual( 1, stackAdd.length, "stackAdd must have one input parameter, the element to add" );
@@ -69,7 +74,7 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.areEqual( 3, stackSize(), "If a stack has 3 elements, stackSize() should return 3" );
     },
 
-    "test that function stackGet is properly defined" :
+    "test that function stackGet is declared" :
     function () {
       Y.assert( "function" === typeof(stackGet), "You need a function named stackGet" );
       Y.Assert.areEqual( 0, stackGet.length, "stackGet must have no input parameter" );
@@ -136,7 +141,7 @@ YUI().use('node', 'console', 'test', function(Y) {
       
      },
 
-    "test that function stackPeek is properly defined" :
+    "test that function stackPeek is declared" :
     function () {
       Y.assert( "function" === typeof(stackPeek), "You need a function named stackPeek" );
       Y.Assert.areEqual( 1, stackPeek.length, "stackPeek must have one (optional) input parameter, the index of the element to be returned" );
@@ -171,7 +176,7 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.areEqual( "a", stackPeek(0), "0th element should be 'a'" );
     },
 
-    "test that function stackContains is properly defined" :
+    "test that function stackContains is declared" :
     function () {
       Y.assert( "function" === typeof(stackContains), "You need a function named stackContains" );
       Y.Assert.areEqual( 1, stackContains.length, "stackContains must have one input parameter, the element for which to search" );
