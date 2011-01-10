@@ -70,13 +70,13 @@ Your goal is to get all the tests from RED to GREEN. In order to do this, we str
   * You'll find that you need to rewrite code you've already written.
     This is normal. Just be sure to (a) re-run the tests
     after each change you make, (b) identify any previously passed tests that
-    now fail, and immediately fix them so that they pass again.
+    now fail, and (c) immediately fix them so that they pass again.
 
 
 PLAIN TEXT EDITORS
 ==================
 
-Source code– the code humans write that is then interpreted or compiled by the computer in order to create object code, which can be executed by the computer– is just plain text. Plain text means it's a very simple text-only file format and NOT a word processor file format. Word processor files, even if you've only typed text and saved the file, contain additional information such as font details, printing details, page dimensions, and so on. A plain text file contains nothing but the characters you type.
+Source code– the code humans write that is then interpreted or compiled by the computer in order to create object code, which can be executed by the computer– is just plain text. "Plain text" is a technical term of art that refers to a very simple file format that contains only letters, numbers, punctuation, and whitespace characters and NOT a word processor file format. Word processor files, even if you've only typed text and saved the file, contain additional information such as font details, printing details, page dimensions, and so on. A plain text file contains nothing but the characters you type.
 
 There are many plain text editors available for free; your computer may already have one installed (Notepad or Textedit, for example). Programmers tend to prefer plain text editors that provide certain kinds of support that help visualize the source code: line numbers, syntax coloring, etc.
 
@@ -85,6 +85,7 @@ There are many plain text editors available for free; your computer may already 
   Windows     Notepad++        http://notepad-plus-plus.org/
 
   Linux
+
 
 WEB BROWSER'S DEBUGGING TOOLS
 =============================
