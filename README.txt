@@ -7,9 +7,9 @@ In TDD, a programmer or a pair of programmers works to first write a "unit test"
 
 Once a test fails, the programmer (or, if pair-programming, the other programmer) then writes just enough code to make the test pass. In other words, you "do the simplest thing that can possibly work" (DTSTTCPW) to make the test pass. Passing a test is referred to as being GREEN. Consider a test which says:
 
-  assert( isNumeric( computeGPA() ) );
+  assert.isNumber( computeGPA() );
 
-Think about how much this one assertion tells us about the code we're expected to write: to pass this test, we must define a function (or method) named computeGPA and that function should allow for zero input parameters. Whatever else computeGPA does, it must return a numeric value.
+Think about how much this one assertion tells us about the code we're expected to write: to pass this test, we must define a function (or method) named computeGPA and that function should allow for zero input parameters. Whatever else computeGPA does, it must return a number.
 
 The simplest thing that could be written to pass this test (in JavaScript) is:
 
