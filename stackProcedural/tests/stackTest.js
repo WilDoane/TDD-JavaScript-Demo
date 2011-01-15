@@ -5,7 +5,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
   var unitTests = new Y.Test.Case({
  
-    name: "Testing stack implementation",
+    name: "Testing procedural stack implementation",
 
     setUp :
     function () {
