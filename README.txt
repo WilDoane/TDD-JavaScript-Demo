@@ -5,7 +5,7 @@ This is a programming exercise designed using a Test-Driven Learning (TDL) appro
 
 In TDD, a programmer or a pair of programmers works to first write a "unit test" for some functionality desired in an application. In TDL, unit tests written by instructors serve to guide student code writing. Since the test is written before the code being tested, the test will initially fail when run. This is referred to as being RED: a failed test. 
 
-Once a test fails, the programmer (or, if pair-programming, the other programmer) then writes just enough code to make the test pass. In other words, you "do the simplest thing that can possibly work" (DTSTTCPW) to make the test pass. Passing a test is referred to as being GREEN. Consider a test which says:
+Once a test fails, the programmer (or, if pair-programming, the other programmer) then writes just enough code to make the test pass. In other words, you "do the simplest thing that can possibly work" (DTSTTCPW -- a motto of the Agile Development community) to make the test pass. Passing a test is referred to as being GREEN. Consider a test which says:
 
   assert.isNumber( computeGPA() );
 
@@ -31,17 +31,22 @@ TDL affords instructors the benefit of being able to encode their expectations f
 THIS REPOSITORY
 ===============
 
-The tests in this repository are intended to be run from within a typical web browser. Files are organized into three main directories:
+This repository is organized into distinct tasks. At the highest level, you'll find a list of project directories with various names, this README.txt file, and the yui folder. 
+
+  README.txt An overview of the organization and purpose of the repository
+  yui        The Yahoo! framework that provides the unit testing 
+              tools we need.
+
+Each task directory is organized into two main directories:
 
   src    The source code that you'll write to satisfy the tests.
   tests  The collection of tests for code stored in src.
-  yui    The Yahoo! framework that provides the unit testing tools we need.
 
 In the tests directory, you'll find a typical test harness (just enough structure to bootstrap the running of the tests)
 
   runTests.html
 
-Launch your preferred web browser and, optionally, activate the debugging tools provided therein (see "Web Browser Debugging Tools", below). Then, select
+The test harness is intended to be run from within a typical web browser. Launch your preferred web browser and, optionally, activate the debugging tools provided therein (see "Web Browser Debugging Tools", below). Then, select
 
   File > Open...
 
