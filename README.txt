@@ -37,10 +37,11 @@ This repository is organized into distinct tasks. At the highest level, you'll f
   yui        The Yahoo! framework that provides the unit testing 
               tools we need.
 
-Each task directory is organized into two main directories:
+Each task directory is organized into two main directories and includes its own README.txt file describing that particular task:
 
-  src    The source code that you'll write to satisfy the tests.
-  tests  The collection of tests for code stored in src.
+  README.txt A description of a given task
+  src        The source code that you'll write to satisfy the tests.
+  tests      The collection of tests for code stored in src.
 
 In the tests directory, you'll find a typical test harness (just enough structure to bootstrap the running of the tests)
 
