@@ -1,32 +1,33 @@
 var authorsName = "William Doane";
 
-var stack = (function(){
-  var _stack = [],
+var stack = (function () {
+  var theStack = [];
 
   return {
-    init: function() {
-      _stack = [];
+    init: function () {
+      theStack = [];
     },
   
-    push: function(e) {
-      _stack.push(e);
+    push: function (e) {
+      theStack.push(e);
     },
     
-    pop: function() {
-      if (_stack.length != 0) {
-        return _stack.pop();
+    pop: function () {
+      if (theStack.length !== 0) {
+        return theStack.pop();
       }
     },
     
-    peek: function(index) {
+    peek: function (index) {
       var i = (typeof index !== "undefined") ? index : this.size() - 1;
       
-      return _stack[i];
+      return theStack[i];
     }, 
 
-    contains: function(e) {
-      for (var i = 0; i < this.size(); i++) {
-        if (_stack[i] == e) {
+    contains: function (e) {
+      var i;
+      for (i = 0; i < this.size(); i = i + 1) {
+        if (theStack[i] === e) {
           return true;
         }
       }
@@ -34,9 +35,9 @@ var stack = (function(){
       return false;
     }, 
 
-    size: function() {
-      return _stack.length;
-    },
+    size: function () {
+      return theStack.length;
+    }
 
   };
 }());
