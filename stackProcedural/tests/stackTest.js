@@ -1,6 +1,13 @@
 // Create new YUI instance, and populate it with the required modules
 YUI().use('node', 'console', 'test', function(Y) {
  
+  function authorsNameExists() {
+    return ( "string" === typeof authorsName ) ? true : false;
+  }
+
+  function stackInitExists() {
+    return ( "function" === typeof stackInit ) ? true : false;
+  }
   // Test available, and ready for use.
 
   var unitTests = new Y.Test.Case({
@@ -32,13 +39,13 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that function stackInit is declared" :
     function () {
-      Y.assert( "function" === typeof(stackInit), "You need a function that will allow users of your code to initialize a new stack. This function must be named stackInit defined in stack.js located in the src folder" );
+      Y.assert( "function" === typeof stackInit, "You need a function that will allow users of your code to initialize a new stack. This function must be named stackInit defined in stack.js located in the src folder" );
       Y.Assert.areEqual( 0, stackInit.length, "stackInit must have no input parameter" );
      },
 
     "test that function stackSize is declared" : 
     function () {
-      Y.assert( "function" === typeof(stackSize), "You need a function named stackSize that will allow users of your code to determine how many elements are in the stack" );
+      Y.assert( "function" === typeof stackSize, "You need a function named stackSize that will allow users of your code to determine how many elements are in the stack" );
       Y.Assert.areEqual( 0, stackSize.length, "stackSize must have no input parameter" );
     },
 
@@ -54,45 +61,45 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that function stackAdd is declared" :
     function () {
-      Y.assert( "function" === typeof(stackAdd), "You need a function named stackAdd that allows users of your code to add elements to the stack" );
+      Y.assert( "function" === typeof stackAdd, "You need a function named stackAdd that allows users of your code to add elements to the stack" );
       Y.Assert.areEqual( 1, stackAdd.length, "stackAdd must have one input parameter, the element to add" );
     },
 
     "test that a stack with 1 element is of length 1" :
     function () {
-      stackAdd("a");
+      stackAdd( "a" );
 
       Y.Assert.areEqual( 1, stackSize(), "If a stack has 1 element, stackSize() should return 1" );
     },
 
     "test that a stack with 3 elements is of length 3" :
     function () {
-      stackAdd("a");
-      stackAdd("b");
-      stackAdd("c");
+      stackAdd( "a" );
+      stackAdd( "b" );
+      stackAdd( "c" );
 
       Y.Assert.areEqual( 3, stackSize(), "If a stack has 3 elements, stackSize() should return 3" );
     },
 
     "test that function stackGet is declared" :
     function () {
-      Y.assert( "function" === typeof(stackGet), "You need a function named stackGet that allows users of your code to get the last element added to the stack" );
+      Y.assert( "function" === typeof stackGet, "You need a function named stackGet that allows users of your code to get the last element added to the stack" );
       Y.Assert.areEqual( 0, stackGet.length, "stackGet must have no input parameter" );
     },
 
     "test that stackGet returns the last element added" :
     function () {
-      stackAdd("a");
-      stackAdd("b");
+      stackAdd( "a" );
+      stackAdd( "b" );
 
       Y.Assert.areEqual( "b", stackGet(), "Last element added should be returned by stackGet()" );
     },
 
     "test that stackGet removes the returned element from the stack" :
     function () {
-      stackAdd("a");
-      stackAdd("b");
-      stackAdd("c");
+      stackAdd( "a" );
+      stackAdd( "b" );
+      stackAdd( "c" );
 
       Y.Assert.areEqual( "c", stackGet(), "Last element added should be returned by stackGet()" );
       Y.Assert.areEqual( "b", stackGet(), "next to last element added should be returned by a second stackGet()" );
@@ -101,9 +108,9 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that stacks can contain 2 distinct elements with the same value" :
     function () {
-      stackAdd("a");
-      stackAdd("b");
-      stackAdd("a");
+      stackAdd( "a" );
+      stackAdd( "b" );
+      stackAdd( "a" );
 
       Y.Assert.areEqual( "a", stackGet(), "First call to stackGet() should return last element added" );
       Y.Assert.areEqual( "b", stackGet(), "Second call to stackGet() should return second to last element added" );
@@ -112,46 +119,48 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that stacks can contain string, number, boolean, and object elements and preserve data types" :
     function () {
-      stackAdd("a");
-      stackAdd(1);
-      stackAdd(true);
-      stackAdd(false);
       var objElement = {};
+      var result;
+
+      stackAdd( "a" );
+      stackAdd( 1 );
+      stackAdd( true );
+      stackAdd( false );
       stackAdd( objElement );
       
-      var result = stackGet();
+      result = stackGet();
       Y.Assert.areEqual( objElement, result, "element should be an empty object {}" );
-      Y.Assert.areEqual( "object", typeof(result), "element should be of type object" );
+      Y.Assert.areEqual( "object", typeof result, "element should be of type object" );
 
       result = stackGet();
       Y.Assert.areEqual( false, result, "element should be the boolean value false" );
-      Y.Assert.areEqual( "boolean", typeof(result), "element should be of type boolean" );
+      Y.Assert.areEqual( "boolean", typeof result, "element should be of type boolean" );
 
       result = stackGet();
       Y.Assert.areEqual( true, result, "element should be the boolean value true" );
-      Y.Assert.areEqual( "boolean", typeof(result), "element should be of type boolean" );
+      Y.Assert.areEqual( "boolean", typeof result, "element should be of type boolean" );
 
       result = stackGet();
       Y.Assert.areEqual( 1, result, "element should be the number value 1" );
-      Y.Assert.areEqual( "number", typeof(result), "element should be of type number" );
+      Y.Assert.areEqual( "number", typeof result, "element should be of type number" );
 
       result = stackGet();
       Y.Assert.areEqual( "a", result, "element should be the boolean value true" );
-      Y.Assert.areEqual( "string", typeof(result), "element should be of type string" );
+      Y.Assert.areEqual( "string", typeof result, "element should be of type string" );
       
      },
 
     "test that function stackPeek is declared" :
     function () {
-      Y.assert( "function" === typeof(stackPeek), "You need a function named stackPeek that allows users of your code to non-destructively access any element in the stack" );
+      Y.assert( "function" === typeof stackPeek, "You need a function named stackPeek that allows users of your code to non-destructively access any element in the stack" );
       Y.Assert.areEqual( 1, stackPeek.length, "stackPeek must have one (optional) input parameter, the index of the element to be returned" );
     },
 
     "test that stackPeek does not remove elements from the stack" :
     function () {
-      stackAdd("a");
-      stackAdd("b");
-      stackAdd("c");
+      stackAdd( "a" );
+      stackAdd( "b" );
+      stackAdd( "c" );
 
       Y.Assert.areEqual( "c", stackPeek(), "stackPeek() should return the last element added without removing it from the stack" );
       Y.Assert.areEqual( "c", stackPeek(), "stackPeek() should return the last element added without removing it from the stack" );
@@ -166,9 +175,9 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that stackPeek allows random access to elements of the stack" :
     function () {
-      stackAdd("a");
-      stackAdd("b");
-      stackAdd("c");
+      stackAdd( "a" );
+      stackAdd( "b" );
+      stackAdd( "c" );
 
       Y.Assert.areEqual( "a", stackPeek(0), "0th element should be 'a'" );
       Y.Assert.areEqual( "b", stackPeek(1), "1th element should be 'b'" );
@@ -178,7 +187,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that function stackContains is declared" :
     function () {
-      Y.assert( "function" === typeof(stackContains), "You need a function named stackContains that allows users of your code to determine whether a given element occurs in the stack" );
+      Y.assert( "function" === typeof stackContains, "You need a function named stackContains that allows users of your code to determine whether a given element occurs in the stack" );
       Y.Assert.areEqual( 1, stackContains.length, "stackContains must have one input parameter, the element for which to search" );
     },
 
@@ -199,12 +208,12 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that stackContains returns true, if the sought element is in the stack" :
     function () {
-      stackAdd("a");
-      stackAdd("b");
-      stackAdd("c");
-      stackAdd(1);
-      stackAdd(2);
-      stackAdd(3);
+      stackAdd( "a" );
+      stackAdd( "b" );
+      stackAdd( "c" );
+      stackAdd( 1 );
+      stackAdd( 2 );
+      stackAdd( 3 );
 
       Y.Assert.areEqual( true, stackContains("a"), "'a' should be in the stack" );
       Y.Assert.areEqual( true, stackContains("b"), "'b' should be in the stack" );
@@ -216,12 +225,12 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that stackContains returns false, if the sought element is not in the stack" :
     function () {
-      stackAdd("a");
-      stackAdd("b");
-      stackAdd("c");
-      stackAdd(1);
-      stackAdd(2);
-      stackAdd(3);
+      stackAdd( "a" );
+      stackAdd( "b" );
+      stackAdd( "c" );
+      stackAdd( 1 );
+      stackAdd( 2 );
+      stackAdd( 3 );
 
       Y.Assert.areEqual( false, stackContains(""), "the empty string should not be in the stack" );
       Y.Assert.areEqual( false, stackContains("z"), "'z' should not be in the stack" );
@@ -232,37 +241,25 @@ YUI().use('node', 'console', 'test', function(Y) {
 
   });
 
+  function logResultsToServer(data){
+    //get results
+    var testResults = Y.Test.Runner.getResults();
+  
+    var reporter = new Y.Test.Reporter( "http://nwghost.com/tdd-collector.php", Y.Test.Format.TAP );
+  
+    reporter.addField( "authorsName", authorsNameExists() ? authorsName : "UNKNOWN AUTHOR" );
+    
+    reporter.report( testResults );
+    //reporter.destroy();
+  }
 
   var r = new Y.Console({
       newestOnTop: false
   });  
 
-  r.render("#testReport");
-  
-  Y.Test.Runner.add(unitTests);
-
-  Y.Test.Runner.subscribe(Y.Test.Runner.COMPLETE_EVENT, logResultsToServer);
-  
+  r.render( "#testReport" );
+  Y.Test.Runner.add( unitTests );
+  Y.Test.Runner.subscribe( Y.Test.Runner.COMPLETE_EVENT, logResultsToServer );
   Y.Test.Runner.run();
-  
-  function logResultsToServer(data){
-    //get results
-    var testResults = Y.Test.Runner.getResults();
-  
-    var reporter = new Y.Test.Reporter("http://nwghost.com/tdd-collector.php", Y.Test.Format.TAP);
-  
-    reporter.addField("authorsName", authorsNameExists() ? authorsName : "UNKNOWN AUTHOR");
-    
-    reporter.report(testResults);
-    //reporter.destroy();
-  }
-  
-  function authorsNameExists() {
-    return ( "string" === typeof(authorsName) ) ? true : false;
-  }
-
-  function stackInitExists() {
-    return ( "function" === typeof(stackInit) ) ? true : false;
-  }
-  
+      
  });
