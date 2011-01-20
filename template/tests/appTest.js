@@ -46,12 +46,11 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.isNotNull( sourceString.match(re), "The variable authorsName must have a value of 'Yourfirstname Yourlastname' (insert your own name)" );
     },
 
-
     "test that function init is declared in the stack object" :
     function () {
       Y.assert( "function" === typeof(app.init), "You need a function that will allow users of your code to initialize a new app. This function must be in a app object, named init, and defined in app.js located in the src folder" );
       Y.Assert.areEqual( 0, app.init.length, "function init must have no input parameter" );
-     }
+    }
 
 
   });
@@ -60,11 +59,8 @@ YUI().use('node', 'console', 'test', function(Y) {
     var testResults, serverReporter;
 
     testResults = Y.Test.Runner.getResults();
-  
     serverReporter = new Y.Test.Reporter("http://nwghost.com/tdd-collector.php", Y.Test.Format.TAP);
-  
     serverReporter.addField("authorsName", authorsNameExists() ? authorsName : "UNKNOWN AUTHOR");
-    
     serverReporter.report(testResults);
   }
 
@@ -73,11 +69,8 @@ YUI().use('node', 'console', 'test', function(Y) {
   });  
 
   reporter.render("#testReport");
-  
   Y.Test.Runner.add(unitTests);
-
   Y.Test.Runner.subscribe(Y.Test.Runner.COMPLETE_EVENT, logResultsToServer);
-  
   Y.Test.Runner.run();
       
  });
