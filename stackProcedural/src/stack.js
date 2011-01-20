@@ -1,8 +1,8 @@
 var authorsName = "William Doane";
-var stack = new Array();
+var stack = [];
 
 function stackInit() {
-  stack = new Array();
+  stack = [];
 }
 
 function stackSize() {
@@ -25,8 +25,10 @@ function stackGet() {
 }
 
 function stackContains(element) {
-  for(var i = 0; i <= stack.length - 1; i++) {
-    if (stackPeek(i) == element) {
+  var i;
+  
+  for(i = 0; i <= stack.length - 1; i = i + 1) {
+    if (stackPeek(i) === element) {
       return true;
     }
   }

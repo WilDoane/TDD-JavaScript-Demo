@@ -1,3 +1,5 @@
+/*global YUI, stack, authorsName, stackInit, stackSize, stackContains, stackPeek, stackGet, stackAdd */
+/*jslint onevar: true, undef: true, newcap: true, nomen: true, regexp: true, plusplus: true, bitwise: true */
 // Create new YUI instance, and populate it with the required modules
 YUI().use('node', 'console', 'test', function(Y) {
  
@@ -10,13 +12,17 @@ YUI().use('node', 'console', 'test', function(Y) {
   }
   // Test available, and ready for use.
 
-  var unitTests = new Y.Test.Case({
+  var reporter, unitTests;
+  
+  unitTests = new Y.Test.Case({
  
     name: "Testing procedural stack implementation",
 
     setUp :
     function () {
-      stackInitExists() ? stackInit() : null;
+      if ( stackInitExists() ) {
+        stackInit();
+      }
     },
 
     tearDown :
@@ -30,9 +36,10 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that the variable authorsName follows the proper format" :
     function () {
-      var re = /^[A-Za-z\'\-]+\s+[A-Za-z\'\-]+/;
+      var sourceString, re;
       
-      var sourceString = authorsNameExists() ? authorsName : "";
+      re = /^[A-Za-z\'\-]+\s+[A-Za-z\'\-]+/;
+      sourceString = authorsNameExists() ? authorsName : "";
       
       Y.Assert.isNotNull( sourceString.match(re), "The variable authorsName must have a value of 'Yourfirstname Yourlastname' (insert your own name)" );
     },
@@ -119,8 +126,9 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that stacks can contain string, number, boolean, and object elements and preserve data types" :
     function () {
-      var objElement = {};
-      var result;
+      var objElement, result;
+      
+      objElement = {};
 
       stackAdd( "a" );
       stackAdd( 1 );
@@ -237,27 +245,27 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.areEqual( false, stackContains(4), "4 should not be in the stack" );
       Y.Assert.areEqual( false, stackContains(undefined), "undefined should not be in the stack" );
       Y.Assert.areEqual( false, stackContains(null), "null should not be in the stack" );
-    },
+    }
 
   });
 
   function logResultsToServer(data){
+    var testResults, serverReporter;
     //get results
-    var testResults = Y.Test.Runner.getResults();
+    testResults = Y.Test.Runner.getResults();
   
-    var reporter = new Y.Test.Reporter( "http://nwghost.com/tdd-collector.php", Y.Test.Format.TAP );
+    serverReporter = new Y.Test.Reporter( "http://nwghost.com/tdd-collector.php", Y.Test.Format.TAP );
   
-    reporter.addField( "authorsName", authorsNameExists() ? authorsName : "UNKNOWN AUTHOR" );
+    serverReporter.addField( "authorsName", authorsNameExists() ? authorsName : "UNKNOWN AUTHOR" );
     
-    reporter.report( testResults );
-    //reporter.destroy();
+    serverReporter.report( testResults );
   }
 
-  var r = new Y.Console({
+  reporter = new Y.Console({
       newestOnTop: false
   });  
 
-  r.render( "#testReport" );
+  reporter.render( "#testReport" );
   Y.Test.Runner.add( unitTests );
   Y.Test.Runner.subscribe( Y.Test.Runner.COMPLETE_EVENT, logResultsToServer );
   Y.Test.Runner.run();
