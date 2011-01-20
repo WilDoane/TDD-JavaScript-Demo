@@ -1,0 +1,66 @@
+TEST THAT THE PROGRAMER'S NAME HAS BEEN ADDED TO THE APP CODE
+
+    "test that a global variable named authorsName exists" :
+    function () {
+      Y.assert( authorsNameExists(), "You need a global variable named authorsName defined in stack.js located in the src folder" );
+    }
+
+    "test that the variable authorsName follows the proper format" :
+    function () {
+      var re, sourceString;
+  
+      re = /^[A-Za-z\'\-]+\s+[A-Za-z\'\-]+/;
+      sourceString = authorsNameExists() ? authorsName : "";
+  
+      Y.Assert.isNotNull( sourceString.match(re), "The variable authorsName must have a value of 'Yourfirstname Yourlastname' (insert your own name)" );
+    }
+
+TEST THAT REQUIRED OBJECTS/FUNCTIONS EXIST
+TEST THAT FUNCTIONS ACCEPT THE CORRECT NUMBER OF INPUT PARAMETERS
+
+    "test that function init is declared in the stack object" :
+    function () {
+      Y.assert( "function" === typeof(app.init), "You need a function that will allow users of your code to initialize a new app. This function must be in a app object, named init, and defined in app.js located in the src folder" );
+      Y.Assert.areEqual( 0, app.init.length, "function init must have no input parameter" );
+     }
+
+TEST THAT FUNCTIONS REJECT INPUT PARAMETERS OF THE WRONG DATA TYPE
+
+
+
+
+TEST THAT FUNCTIONS RETURN VALUES ARE OF THE CORRECT DATA TYPE
+
+    "test that size returns a numeric value" : 
+    function () {
+      Y.Assert.isNumber( stack.size(), "function size should return a number" );
+    }
+
+TEST THAT FUNCTIONS RETURN THE CORRECT OUTPUT FOR BOUNDARY CASES (0, 1, -INF, +INF)
+
+    "test that a new stack is of length 0" : 
+    function () {
+      Y.Assert.areEqual( 0, stack.size(), "If no elements have been added to the stack, the size function should return 0" );
+    }
+
+    "test that a stack with 1 element is of length 1" :
+    function () {
+      stack.push( "a" );
+
+      Y.Assert.areEqual( 1, stack.size(), "If a stack has 1 element, function size should return 1" );
+    }
+
+TEST THAT FUNCTIONS RETURN THE CORRECT OUTPUT FOR TYPICAL CASES
+
+    "test that function pop removes the returned element from the stack" :
+     function () {
+       stack.push( "a" );
+       stack.push( "b" );
+       stack.push( "c" );
+
+       Y.Assert.areEqual( "c", stack.pop(), "Last element added should be returned by call to function pop" );
+       Y.Assert.areEqual( "b", stack.pop(), "Next to last element added should be returned by a second call to function pop" );
+       Y.Assert.areEqual( "a", stack.pop(), "First element added should be returned by a third call to function pop" );
+     }
+
+
