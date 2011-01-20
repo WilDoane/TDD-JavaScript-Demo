@@ -4,9 +4,13 @@ var app = (function(){
   var _appStorage = [],
 
   return {
-    init: function() {
+    main: function() {
       
     },
+
+    init: function() {
+      
+    }
 
   };
 }());
