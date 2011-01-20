@@ -108,8 +108,8 @@ YUI().use('node', 'console', 'test', function (Y) {
       stack.push( "c" );
 
       Y.Assert.areEqual( "c", stack.pop(), "Last element added should be returned by call to function pop" );
-      Y.Assert.areEqual( "b", stack.pop(), "next to last element added should be returned by a second call to function pop" );
-      Y.Assert.areEqual( "a", stack.pop(), "first element added should be returned by a third call to function pop" );
+      Y.Assert.areEqual( "b", stack.pop(), "Next to last element added should be returned by a second call to function pop" );
+      Y.Assert.areEqual( "a", stack.pop(), "First element added should be returned by a third call to function pop" );
     },
 
     "test that stacks can contain 2 distinct elements with the same value" :
