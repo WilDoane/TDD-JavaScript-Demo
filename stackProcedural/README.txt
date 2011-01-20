@@ -7,7 +7,7 @@ A stack is a common data structure in computer programming. A stack begins empty
 
 Since we're always focused on the last element pushed onto the stack, a stack is a Last In, First Out (LIFO) data structure.
 
-Functions are small blocks of code that, ideally, perform a single task. This a referred to as the Single Responsibility Principle (SRP). We don't want functions to have side effects (non-obvious behaviors). For example, a function that computes the sum of two integers should not also print out the result. Instead, it should simply return the result so that users of the summing function can decide what to do with the result: print it, use it in other computations, etc.
+Functions are small blocks of code that, ideally, perform a single task. This is a version of the Single Responsibility Principle (SRP) [1]. We don't want functions to have side effects (non-obvious behaviors). For example, a function that computes the sum of two integers should not also print out the result. Instead, it should simply return the result so that users of the summing function can decide what to do with the result: print it, use it in other computations, etc.
 
   var x;
   
@@ -21,3 +21,7 @@ Functions are small blocks of code that, ideally, perform a single task. This a 
 
 Functions can take one or more inputs (e.g., a and b in the sum function) and can return a value. 
 
+
+
+
+[1] http://www.butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod
