@@ -78,7 +78,7 @@ YUI().use('node', 'console', 'test', function(Y) {
       for(i = 0; i < 100000; i = i + 1) {
         max = Math.max(max, rollDie(lowest, highest));
       }
-      Y.Assert.areEqual( max, 6, "The maximimum possible die roll should be 6" );
+      Y.Assert.areEqual( 6, max, "The maximimum possible die roll should be 6" );
     },
 
     "test that the lowest rolled value is 1" :
@@ -87,7 +87,7 @@ YUI().use('node', 'console', 'test', function(Y) {
       for(i = 0; i < 100000; i = i + 1) {
         min = Math.min(min, rollDie(lowest, highest));
       }
-      Y.Assert.areEqual( min, 1, "The minimum possible die roll should be 1" );
+      Y.Assert.areEqual( 1, min, "The minimum possible die roll should be 1" );
     },
 
 
