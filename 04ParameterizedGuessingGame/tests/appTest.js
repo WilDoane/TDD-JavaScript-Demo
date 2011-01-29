@@ -40,34 +40,34 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.isNotNull( sourceString.match(re), "The variable authorsName must have a value of 'Yourfirstname Yourlastname' (insert your own name)" );
     },
 
-    "test that a global variable named min is properly defined" :
+    "test that a global variable named lowest is properly defined" :
     function () {
-      Y.Assert.areEqual( "number", typeof min, "You need a global variable named min that defines the minimum number possible in the game" );
-      Y.Assert.areEqual( parseInt(min), min, "the variable min should be an integer" );
+      Y.Assert.areEqual( "number", typeof lowest, "You need a global variable named lowest that defines the minimum number possible in the game" );
+      Y.Assert.areEqual( parseInt(lowest), lowest, "the variable lowest should be an integer" );
     },
 
-    "test that a global variable named max is properly defined" :
+    "test that a global variable named highest is properly defined" :
     function () {
-      Y.Assert.areEqual( "number", typeof max, "You need a global variable named max that defines the maximum number possible in the game" );
-      Y.Assert.areEqual( parseInt(max), max, "the variable max should be an integer" );
+      Y.Assert.areEqual( "number", typeof highest, "You need a global variable named highest that defines the maximum number possible in the game" );
+      Y.Assert.areEqual( parseInt(highest), highest, "the variable highest should be an integer" );
     },
 
     "test that function rollDie is declared" :
     function () {
       Y.Assert.areEqual( "function", typeof rollDie, "You need a function that will allow users of your code to roll a six-sided die. This function must be named rollDie, and defined in app.js located in the src folder" );
-      Y.Assert.areEqual( 0, rollDie.length, "function rollDie must have no input parameter" );
+      Y.Assert.areEqual( 2, rollDie.length, "function rollDie must have two input parameters: the min and the max number to return" );
      },
      
      "test that rollDie returns a numeric value" : 
      function () {
-       Y.Assert.isNumber( rollDie(), "function rollDie should return a number" );
+       Y.Assert.isNumber( rollDie(lowest, highest), "function rollDie should return a number" );
      },    
 
      "test that rollDie returns an integer numeric value" : 
      function () {
        var i, result;
        for(i = 0; i < 10; i = i + 1) {
-         result = rollDie();
+         result = rollDie(lowest, highest);
          Y.Assert.areEqual( Math.floor(result), result, "function rollDie should return an integer (whole number)" );
        }
      },    
@@ -76,7 +76,7 @@ YUI().use('node', 'console', 'test', function(Y) {
     function () {
       var i, max = 0;
       for(i = 0; i < 100000; i = i + 1) {
-        max = Math.max(max, rollDie());
+        max = Math.max(max, rollDie(lowest, highest));
       }
       Y.Assert.areEqual( max, 6, "The maximimum possible die roll should be 6" );
     },
@@ -85,7 +85,7 @@ YUI().use('node', 'console', 'test', function(Y) {
     function () {
       var i, min = 99;
       for(i = 0; i < 100000; i = i + 1) {
-        min = Math.min(min, rollDie());
+        min = Math.min(min, rollDie(lowest, highest));
       }
       Y.Assert.areEqual( min, 1, "The minimum possible die roll should be 1" );
     },
