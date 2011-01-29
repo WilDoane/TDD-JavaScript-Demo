@@ -93,8 +93,8 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that function getUserInput is declared" :
     function () {
-      Y.Assert.areEqual( "function", typeof getUserInput, "You need a function that will prompt the user for their guess." );
-      Y.Assert.areEqual( 0, getUserInput.length, "function getUserInput must have no input parameter" );
+      Y.Assert.areEqual( "function", typeof getUserInput, "You need a function that will prompt the user for input." );
+      Y.Assert.areEqual( 1, getUserInput.length, "function getUserInput must now have ONE input parameter: the string to display to the user" );
      }, 
 
 
