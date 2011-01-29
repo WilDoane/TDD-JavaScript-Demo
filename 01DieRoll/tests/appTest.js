@@ -41,7 +41,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that function rollDie is declared" :
     function () {
-      Y.assert( "function" === typeof rollDie, "You need a function that will allow users of your code to roll a six-sided die. This function must be named rollDie, and defined in app.js located in the src folder" );
+      Y.Assert.areEqual( "function", typeof rollDie, "You need a function that will allow users of your code to roll a six-sided die. This function must be named rollDie, and defined in app.js located in the src folder" );
       Y.Assert.areEqual( 0, rollDie.length, "function rollDie must have no input parameter" );
      },
      

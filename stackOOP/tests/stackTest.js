@@ -45,13 +45,13 @@ YUI().use('node', 'console', 'test', function (Y) {
 
     "test that function init is declared in the stack object" :
     function () {
-      Y.assert( "function" === typeof stack.init, "You need a function that will allow users of your code to initialize a new stack. This function must be in a stack object, named init, and defined in stack.js located in the src folder" );
+      Y.Assert.areEqual( "function", typeof stack.init, "You need a function that will allow users of your code to initialize a new stack. This function must be in a stack object, named init, and defined in stack.js located in the src folder" );
       Y.Assert.areEqual( 0, stack.init.length, "function init must have no input parameter" );
      },
 
     "test that function size is declared in the stack object" : 
     function () {
-      Y.assert( "function" === typeof stack.size, "You need a function named size that will allow users of your code to determine how many elements are in the stack" );
+      Y.Assert.areEqual( "function", typeof stack.size, "You need a function named size that will allow users of your code to determine how many elements are in the stack" );
       Y.Assert.areEqual( 0, stack.size.length, "function size must have no input parameter" );
     },
 
@@ -67,7 +67,7 @@ YUI().use('node', 'console', 'test', function (Y) {
 
     "test that function push is declared in the stack object" :
     function () {
-      Y.assert( "function" === typeof stack.push, "You need a function named push that allows users of your code to add elements to the stack" );
+      Y.Assert.areEqual( "function", typeof stack.push, "You need a function named push that allows users of your code to add elements to the stack" );
       Y.Assert.areEqual( 1, stack.push.length, "function push must have one input parameter, the element to add" );
     },
 
@@ -89,7 +89,7 @@ YUI().use('node', 'console', 'test', function (Y) {
 
     "test that function pop is declared in the stack object" :
     function () {
-      Y.assert( "function" === typeof stack.pop, "You need a function named pop that allows users of your code to get the last element added to the stack" );
+      Y.Assert.areEqual( "function", typeof stack.pop, "You need a function named pop that allows users of your code to get the last element added to the stack" );
       Y.Assert.areEqual( 0, stack.pop.length, "function pop must have no input parameter" );
     },
 
@@ -158,7 +158,7 @@ YUI().use('node', 'console', 'test', function (Y) {
 
     "test that function peek is declared in the stack object" :
     function () {
-      Y.assert( "function" === typeof stack.peek, "You need a function named peek that allows users of your code to non-destructively access any element in the stack" );
+      Y.Assert.areEqual( "function", typeof stack.peek, "You need a function named peek that allows users of your code to non-destructively access any element in the stack" );
       Y.Assert.areEqual( 1, stack.peek.length, "function peek must have one (optional) input parameter, the index of the element to be returned" );
     },
 
@@ -193,7 +193,7 @@ YUI().use('node', 'console', 'test', function (Y) {
 
     "test that function contains is declared in the stack object" :
     function () {
-      Y.assert( "function" === typeof stack.contains, "You need a function named contains that allows users of your code to determine whether a given element occurs in the stack" );
+      Y.Assert.areEqual( "function", typeof stack.contains, "You need a function named contains that allows users of your code to determine whether a given element occurs in the stack" );
       Y.Assert.areEqual( 1, stack.contains.length, "function contains must have one input parameter, the element for which to search" );
     },
 

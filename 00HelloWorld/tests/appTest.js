@@ -41,7 +41,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that function greetings is declared" :
     function () {
-      Y.assert( "function" === typeof greetings, "You need a function that will allow users of your code to get the greeting string. This function must be named greetings, and defined in app.js located in the src folder" );
+      Y.Assert.areEqual( "function", typeof greetings, "You need a function that will allow users of your code to get the greeting string. This function must be named greetings, and defined in app.js located in the src folder" );
       Y.Assert.areEqual( 0, greetings.length, "function greetings must have no input parameter" );
      },
      

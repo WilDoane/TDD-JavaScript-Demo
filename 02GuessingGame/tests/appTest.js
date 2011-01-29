@@ -43,7 +43,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that function rollDie is declared" :
     function () {
-      Y.assert( "function" === typeof rollDie, "You need a function that will allow users of your code to roll a six-sided die. This function must be named rollDie, and defined in app.js located in the src folder" );
+      Y.Assert.areEqual( "function", typeof rollDie, "You need a function that will allow users of your code to roll a six-sided die. This function must be named rollDie, and defined in app.js located in the src folder" );
       Y.Assert.areEqual( 0, rollDie.length, "function rollDie must have no input parameter" );
      },
      
@@ -82,14 +82,14 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that function getUserInput is declared" :
     function () {
-      Y.assert( "function" === typeof getUserInput, "You need a function that will prompt the user for their guess." );
+      Y.Assert.areEqual( "function", typeof getUserInput, "You need a function that will prompt the user for their guess." );
       Y.Assert.areEqual( 0, getUserInput.length, "function getUserInput must have no input parameter" );
      }, 
 
 
     "test that function convertToDecimal is declared" :
     function () {
-      Y.assert( "function" === typeof convertToDecimal, "You need a function that will convert a string to a decimal." );
+      Y.Assert.areEqual( "function", typeof convertToDecimal, "You need a function that will convert a string to a decimal." );
       Y.Assert.areEqual( 1, convertToDecimal.length, "function convertToDecimal must have one input parameter" );
      },
      
@@ -122,7 +122,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that function isWinner is declared" :
     function () {
-      Y.assert( "function" === typeof isWinner, "You need a function that will determine whether the user is a winner" );
+      Y.Assert.areEqual( "function", typeof isWinner, "You need a function that will determine whether the user is a winner" );
       Y.Assert.areEqual( 2, isWinner.length, "function isWinner must have two input parameters" );
      },
      

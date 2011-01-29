@@ -48,7 +48,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that function init is declared in the stack object" :
     function () {
-      Y.assert( "function" === typeof(app.init), "You need a function that will allow users of your code to initialize a new app. This function must be in a app object, named init, and defined in app.js located in the src folder" );
+      Y.Assert.areEqual( "function", typeof(app.init), "You need a function that will allow users of your code to initialize a new app. This function must be in a app object, named init, and defined in app.js located in the src folder" );
       Y.Assert.areEqual( 0, app.init.length, "function init must have no input parameter" );
     }
 

@@ -14,7 +14,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
   unitTests = new Y.Test.Case({
  
-    name: "Testing Better Guessing Game implementation",
+    name: "Testing Parameterized Guessing Game implementation",
 
     setUp :
     function () {
@@ -40,6 +40,17 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.isNotNull( sourceString.match(re), "The variable authorsName must have a value of 'Yourfirstname Yourlastname' (insert your own name)" );
     },
 
+    "test that a global variable named min is properly defined" :
+    function () {
+      Y.Assert.areEqual( "number", typeof min, "You need a global variable named min that defines the minimum number possible in the game" );
+      Y.Assert.areEqual( parseInt(min), min, "the variable min should be an integer" );
+    },
+
+    "test that a global variable named max is properly defined" :
+    function () {
+      Y.Assert.areEqual( "number", typeof max, "You need a global variable named max that defines the maximum number possible in the game" );
+      Y.Assert.areEqual( parseInt(max), max, "the variable max should be an integer" );
+    },
 
     "test that function rollDie is declared" :
     function () {
