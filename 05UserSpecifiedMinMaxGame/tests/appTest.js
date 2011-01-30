@@ -70,10 +70,25 @@ YUI().use('node', 'console', 'test', function(Y) {
        }
      },    
 
+
     "test that function getUserGuess is declared" :
     function () {
       Y.Assert.areEqual( "function", typeof getUserGuess, "You need a function that will prompt the user for input." );
-      Y.Assert.areEqual( 1, getUserGuess.length, "function getUserGuess must now have ONE input parameter: the string to display to the user" );
+      Y.Assert.areEqual( 2, getUserGuess.length, "function getUserGuess must now have TWO input parameters: the minimum and maximum numbers to display to the uset" );
+     }, 
+
+
+    "test that function getUserLowest is declared" :
+    function () {
+      Y.Assert.areEqual( "function", typeof getUserLowest, "You need a function that will prompt the user for the lowest number to use." );
+      Y.Assert.areEqual( 0, getUserLowest.length, "function getUserLowest must have no input parameters" );
+     }, 
+
+
+    "test that function getUserHighest is declared" :
+    function () {
+      Y.Assert.areEqual( "function", typeof getUserHighest, "You need a function that will prompt the user for the highest number to use." );
+      Y.Assert.areEqual( 0, getUserHighest.length, "function getUserHighest must have no input parameters" );
      }, 
 
 
