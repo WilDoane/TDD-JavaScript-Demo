@@ -27,7 +27,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that a global variable named authorsName exists" :
     function () {
-      Y.assert( authorsNameExists(), "You need a global variable named authorsName defined in app.js located in the src folder" );
+      Y.assert( authorsNameExists(), "You need a global variable named authorsName defined in app.js located in the src/ directory" );
     },
 
     "test that the variable authorsName follows the proper format" :
@@ -54,7 +54,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that function rollDie is declared" :
     function () {
-      Y.Assert.areEqual( "function", typeof rollDie, "You need a function that will allow users of your code to roll a six-sided die. This function must be named rollDie, and defined in app.js located in the src folder" );
+      Y.Assert.areEqual( "function", typeof rollDie, "You need a function that will allow users of your code to roll a six-sided die. This function must be named rollDie, and defined in app.js located in the src/ directory" );
       Y.Assert.areEqual( 2, rollDie.length, "function rollDie must have two input parameters: the min and the max number to return" );
      },
      
