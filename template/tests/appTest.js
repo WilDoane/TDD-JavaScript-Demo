@@ -46,7 +46,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that a global variable named authorsName is declared" :
     function () {
-      Y.assert( authorsNameExists(), "You need a global variable named authorsName is declared in app.js located in the src/ directory" );
+      Y.assert( isDeclared("authorsName"), "You need a global variable named authorsName declared in app.js located in the src/ directory" );
     },
 
     "test that the variable authorsName follows the proper format" :
