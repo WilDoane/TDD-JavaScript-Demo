@@ -116,6 +116,10 @@ Switch to your browser and rerun the tests. You should now be passing that test,
 CONCATENATING strings means to append one string to another. For example
 
   "Hello, " + "Brian Danielak"
+  
+results is a new, single string
+
+  "Hello, Brian Danielak"
 
 In this case, we want to concatenate "Hello, " with the current value of authorsName, so that the greeting will be updated for each person who completes this task. To concatenate a string with a variable, the variable name must not be inside of quotation marks. Otherwise, how would the computer tell the difference between
 
@@ -133,7 +137,7 @@ So, once again, we need to revise greetings()
 
 Switch to your browser and rerun the tests. You should now be passing all tests!
 
-If you're tests are NOT passing, compare what you've done in src/app.js with src/appExample.js and see whether you can spot the critical difference.
+If your tests are NOT passing, compare what you've done in src/app.js with src/appExample.js and see whether you can spot the critical difference.
 
 This task introduced you to
 
