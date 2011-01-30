@@ -2,7 +2,7 @@ TEST THAT THE PROGRAMER'S NAME HAS BEEN ADDED TO THE APP CODE
 
     "test that a global variable named authorsName exists" :
     function () {
-      Y.assert( authorsNameExists(), "You need a global variable named authorsName defined in stack.js located in the src folder" );
+      Y.assert( authorsNameExists(), "You need a global variable named authorsName defined in stack.js located in the src/ directory" );
     }
 
     "test that the variable authorsName follows the proper format" :
@@ -20,7 +20,7 @@ TEST THAT FUNCTIONS ACCEPT THE CORRECT NUMBER OF INPUT PARAMETERS
 
     "test that function init is declared in the stack object" :
     function () {
-      Y.assert( "function" === typeof(app.init), "You need a function that will allow users of your code to initialize a new app. This function must be in a app object, named init, and defined in app.js located in the src folder" );
+      Y.assert( "function" === typeof(app.init), "You need a function that will allow users of your code to initialize a new app. This function must be in a app object, named init, and defined in app.js located in the src/ directory" );
       Y.Assert.areEqual( 0, app.init.length, "function init must have no input parameter" );
      }
 

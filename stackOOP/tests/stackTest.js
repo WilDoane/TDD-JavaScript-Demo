@@ -32,7 +32,7 @@ YUI().use('node', 'console', 'test', function (Y) {
 
     "test that a global variable named authorsName exists" :
     function () {
-      Y.assert( authorsNameExists(), "You need a global variable named authorsName defined in stack.js located in the src folder" );
+      Y.assert( authorsNameExists(), "You need a global variable named authorsName defined in stack.js located in the src/ directory" );
     },
 
     "test that the variable authorsName follows the proper format" :
@@ -45,7 +45,7 @@ YUI().use('node', 'console', 'test', function (Y) {
 
     "test that function init is declared in the stack object" :
     function () {
-      Y.Assert.areEqual( "function", typeof stack.init, "You need a function that will allow users of your code to initialize a new stack. This function must be in a stack object, named init, and defined in stack.js located in the src folder" );
+      Y.Assert.areEqual( "function", typeof stack.init, "You need a function that will allow users of your code to initialize a new stack. This function must be in a stack object, named init, and defined in stack.js located in the src/ directory" );
       Y.Assert.areEqual( 0, stack.init.length, "function init must have no input parameter" );
      },
 

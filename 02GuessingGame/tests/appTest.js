@@ -9,7 +9,7 @@ YUI().use('node', 'console', 'test', function(Y) {
   // SUPPORT FUNCTIONS
   //
   function authorsNameExists() {
-    return ( "string" === typeof(authorsName) ) ? true : false;
+    return ( "string" === typeof authorsName ) ? true : false;
   }
 
   unitTests = new Y.Test.Case({
