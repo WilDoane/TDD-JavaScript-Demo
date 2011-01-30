@@ -42,23 +42,23 @@ TDL affords instructors the benefit of being able to encode their expectations f
 THIS REPOSITORY
 ===============
 
-This repository is organized into distinct tasks. At the highest level, you'll find a list of project directories with various names, this README.txt file, and the yui folder. 
+This repository is organized into distinct tasks. At the highest level, you'll find a list of project directories with various names, this README.txt file, and the yui/ directory. 
 
-  README.txt An overview of the organization and purpose of the repository
-  yui        The Yahoo! framework that provides the unit testing 
-              tools we need.
+  README.txt  An overview of the organization and purpose of the repository
+  yui/        The Yahoo! framework that provides the unit testing 
+               tools we need.
 
 Each task directory is organized into two main directories and includes its own README.txt file describing that particular task:
 
-  README.txt A description of a given task
-  src        The source code that you'll write to satisfy the tests.
-  tests      The collection of tests for code stored in src.
+  README.txt  A description of a given task
+  src/        The source code that you'll write to satisfy the tests.
+  tests/      The collection of tests for code stored in src.
 
-In the src directory, you'll find a typical APPLICATION LOADER (just enough structure to bootstrap the running of the application) named
+In the src/ directory, you'll find a typical APPLICATION LOADER (just enough structure to bootstrap the running of the application) named
 
   runApp.html
 
-In the tests directory, you'll find a typical TEST LOADER (just enough structure to bootstrap the running of the tests) named
+In the tests/ directory, you'll find a typical TEST LOADER (just enough structure to bootstrap the running of the tests) named
 
   runTests.html
 
@@ -87,15 +87,15 @@ To begin, launch your preferred web browser (Firefox, Safari, Chrome, Internet E
 
       File > Open...
 
-    navigate to the tests directory and open the runTests.html file.
+navigate to the tests directory and open the runTests.html file.
 
-    If successful, you should see a LOG console displayed that shows the test results for each of the tests defined in the tests directory. Initially, the test results will all be RED, since you haven't written any code yet to pass them.
+If successful, you should see a LOG console displayed that shows the test results for each of the tests defined in the tests directory. Initially, the test results will all be RED, since you haven't written any code yet to pass them.
 
-    Feel free to look at the tests, but do not change anything in those files. The only changes you should make will be in the src directory.
+Feel free to look at the tests, but do not change anything in those files. The only changes you should make will be in the src directory.
 
-    You can (and SHOULD!) reload runTests.html often in order to re-run the tests. As you write code to pass the tests, they will go GREEN, reflecting a passed test. When all tests pass, you've completed the primary task and, if you haven't yet done so, you can refactor your code to improve its organization. You can do so safely, knowing that, if you break the expected behavior of your code, one or more tests will go RED and you'll be able to address the problem right away.
+You can (and SHOULD!) reload runTests.html often in order to re-run the tests. As you write code to pass the tests, they will go GREEN, reflecting a passed test. When all tests pass, you've completed the primary task and, if you haven't yet done so, you can refactor your code to improve its organization. You can do so safely, knowing that, if you break the expected behavior of your code, one or more tests will go RED and you'll be able to address the problem right away.
 
-    Once your tests are green, you can open the runApp.html file in the src/ directory in order to see your application running in the browser.
+Once your tests are green, you can open the runApp.html file in the src/ directory in order to see your application running in the browser.
 
 
 
