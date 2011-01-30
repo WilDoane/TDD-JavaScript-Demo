@@ -52,15 +52,20 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.isNotNull( sourceString.match(re), "The variable authorsName must have a value of 'Yourfirstname Yourlastname' (insert your own name)" );
     },
 
-    "test that function greetings is declared" :
+    "test function greetings" :
     function () {
-      Y.Assert.areEqual( "function", typeof greetings, "You need a function that will allow users of your code to get the greeting string. This function must be named greetings, and defined in app.js located in the src/ directory" );
-      Y.Assert.areEqual( 0, greetings.length, "function greetings must have no input parameter" );
+      Y.Assert.areEqual( "function", typeof greetings, "You need to define a function that will allow users of your code to get the greeting string. This function must be named greetings, and defined in app.js located in the src/ directory" );
+      Y.Assert.areEqual( 0, greetings.length, "this function must have no input parameter" );
      },
      
      "test that greetings returns a string value" : 
      function () {
        Y.Assert.isString( greetings(), "function greetings should return a string" );
+     },
+
+     "test that greetings returns the correct string" : 
+     function () {
+       Y.Assert.areEqual( "Hello, " + authorsName, greetings(), "function greetings should return the proper greeting" );
      }
 
   });
