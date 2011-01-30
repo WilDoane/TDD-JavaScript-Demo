@@ -1,8 +1,8 @@
 TEST THAT THE PROGRAMER'S NAME HAS BEEN ADDED TO THE APP CODE
 
-    "test that a global variable named authorsName exists" :
+    "test that a global variable named authorsName is declared" :
     function () {
-      Y.assert( authorsNameExists(), "You need a global variable named authorsName defined in stack.js located in the src/ directory" );
+      Y.assert( authorsNameExists(), "You need a global variable named authorsName is declared in stack.js located in the src/ directory" );
     }
 
     "test that the variable authorsName follows the proper format" :

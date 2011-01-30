@@ -28,7 +28,7 @@ In that file, begin by defining a GLOBAL VARIABLE. A variable can be thought of 
 
 where x is a variable (a reference to something that can change value over time). A global variable in programming is a variable that is accessible from anywhere within your application... it is "global". You'll see other variables later that are "local" and can only be accessed within a small part of your application.
 
-Looking at the first failed test, you're told that "You need a global variable named authorsName defined in app.js located in the src/ directory"
+Looking at the first failed test, you're told that "You need a global variable named authorsName is declared in app.js located in the src/ directory"
 
 To DTSTTCPW, you need to add that variable to your app.js file by writing
 

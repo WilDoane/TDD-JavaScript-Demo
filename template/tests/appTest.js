@@ -8,8 +8,21 @@ YUI().use('node', 'console', 'test', function(Y) {
   //
   // SUPPORT FUNCTIONS 
   //
+  function isDeclared(objName) {
+    return ( window.hasOwnProperty(objName) ) ? true : false;
+  }
+
+  // Should always be called as the second part of && so that eval(objName) 
+  // isn't attempted on undeclared ojbects
+  //
+  // if ( isDeclared("x") && isDefined("x") )
+  //
+  function isDefined(objName) {
+    return ( "undefined" !== typeof eval(objName) ) ? true : false;
+  }
+
   function authorsNameExists() {
-    return ( "string" === typeof authorsName ) ? true : false;
+    return ( isDeclared("authorsName") && isDefined("authorsName") ) ? true : false;
   }
 
   function appInitExists() {
@@ -31,9 +44,9 @@ YUI().use('node', 'console', 'test', function(Y) {
     function () {
     },
 
-    "test that a global variable named authorsName exists" :
+    "test that a global variable named authorsName is declared" :
     function () {
-      Y.assert( authorsNameExists(), "You need a global variable named authorsName defined in app.js located in the src/ directory" );
+      Y.assert( authorsNameExists(), "You need a global variable named authorsName is declared in app.js located in the src/ directory" );
     },
 
     "test that the variable authorsName follows the proper format" :
