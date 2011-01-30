@@ -87,7 +87,7 @@ YUI().use('node', 'console', 'test', function(Y) {
       for(i = 0; i < 100000; i = i + 1) {
         min = Math.min(min, rollDie());
       }
-      Y.Assert.areEqual( 1, max, "The minimum possible die roll should be 1" );
+      Y.Assert.areEqual( 1, min, "The minimum possible die roll should be 1" );
     }
 
   });
