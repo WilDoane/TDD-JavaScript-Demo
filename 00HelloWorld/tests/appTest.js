@@ -65,7 +65,10 @@ YUI().use('node', 'console', 'test', function(Y) {
 
      "test that greetings returns the correct string" : 
      function () {
-       Y.Assert.areEqual( "Hello, " + authorsName, greetings(), "function greetings should return the proper greeting" );
+       Y.Assert.areEqual( "Hello, " + authorsName, greetings(), "function greetings should return the string \"Hello, \" concatenated with the value of authorsName" );
+
+       authorsName = "William Doane"
+       Y.Assert.areEqual( "Hello, William Doane", greetings(), "function greetings should return the string \"Hello, \" concatenated with the value of authorsName" );
      }
 
   });
