@@ -1,4 +1,4 @@
-/*global YUI, authorsName, rollDie, main, convertToDecimal, getUserInput, isWinner */
+/*global YUI, authorsName, rollDie, main, convertToDecimal, getUserGuess, isWinner, lowest, highest */
 /*jslint onevar: true, undef: true, newcap: true, nomen: true, regexp: true, plusplus: true, bitwise: true */
 // Create new YUI instance, and populate it with the required modules
 YUI().use('node', 'console', 'test', function(Y) {
@@ -70,10 +70,10 @@ YUI().use('node', 'console', 'test', function(Y) {
        }
      },    
 
-    "test that function getUserInput is declared" :
+    "test that function getUserGuess is declared" :
     function () {
-      Y.Assert.areEqual( "function", typeof getUserInput, "You need a function that will prompt the user for input." );
-      Y.Assert.areEqual( 1, getUserInput.length, "function getUserInput must now have ONE input parameter: the string to display to the user" );
+      Y.Assert.areEqual( "function", typeof getUserGuess, "You need a function that will prompt the user for input." );
+      Y.Assert.areEqual( 1, getUserGuess.length, "function getUserGuess must now have ONE input parameter: the string to display to the user" );
      }, 
 
 

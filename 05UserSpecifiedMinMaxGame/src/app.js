@@ -6,7 +6,7 @@ function rollDie(min, max) {
   return Math.floor(Math.random() * max) + min;
 }
 
-function getUserInput(str) {
+function getUserGuess(str) {
   return prompt(str);
 }
 
@@ -25,19 +25,19 @@ function isWinner(num, guess) {
 function main() {
   var num, guess;
   
-  lowest = getUserInput("What is the lowest number I should use?");
+  lowest = getUserGuess("What is the lowest number I should use?");
   lowest = convertToDecimal(lowest);
   
-  highest = getUserInput("What is the highest number I should use?");
+  highest = getUserGuess("What is the highest number I should use?");
   highest = convertToDecimal(highest);
   
   num = rollDie(lowest, highest);
-  guess = getUserInput("Guess a number from " + lowest + " to " + highest);
+  guess = getUserGuess("Guess a number from " + lowest + " to " + highest);
   guess = convertToDecimal(guess);
   
   while ( !isWinner(num, guess) ) {
     alert("Try again.");
-    guess = getUserInput("Guess a number from " + lowest + " to " + highest);
+    guess = getUserGuess("Guess a number from " + lowest + " to " + highest);
     guess = convertToDecimal(guess);
   }
 

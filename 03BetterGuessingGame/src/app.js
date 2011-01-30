@@ -4,7 +4,7 @@ function rollDie() {
   return Math.floor(Math.random() * 6) + 1;
 }
 
-function getUserInput() {
+function getUserGuess() {
   return prompt("Guess a number from 1 to 6");
 }
 
@@ -24,12 +24,12 @@ function main() {
   var num, guess;
   
   num = rollDie();
-  guess = getUserInput();
+  guess = getUserGuess();
   guess = convertToDecimal(guess);
   
   while ( !isWinner(num, guess) ) {
     alert("Try again.");
-    guess = getUserInput();
+    guess = getUserGuess();
     guess = convertToDecimal(guess);
   }
 
