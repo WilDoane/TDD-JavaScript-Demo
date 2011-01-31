@@ -139,6 +139,8 @@ Switch to your browser and rerun the tests. You should now be passing all tests!
 
 If your tests are NOT passing, compare what you've done in src/app.js with src/appExample.js and see whether you can spot the critical difference.
 
+Once all your tests are passing, try opening src/runApp.html in your web browser to see how the application behaves. This will typically be your final step in each task. You can try running the application earlier, but you may see odd behaviors because your code wasn't finished until you passed all the tests.
+
 This task introduced you to
 
   * the structure of a task
