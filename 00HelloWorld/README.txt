@@ -14,7 +14,7 @@ In this task, you'll be introduced to the structure of tasks that we'll follow f
          any passed tests are still passed and to work toward making all
          failed tests pass, too.
 
-Let's follow the process outlined in the main README.txt file.
+Let's follow the process outlined in the main README.txt file. If you get stuck and your tests are NOT passing, compare the code you've written in src/app.js with our example code in src/appExample.js and see whether you can spot the critical difference. Only this initial task has appExample.js 
 
 First, let's run the tests for this task. Open tests/tunTests.html in your web browser. This will be your first step when you begin each task. You'll want to keep that browser window open so that you can easily reload the tests after each change.
 
@@ -136,8 +136,6 @@ So, once again, we need to revise greetings()
   }
 
 Switch to your browser and rerun the tests. You should now be passing all tests!
-
-If your tests are NOT passing, compare what you've done in src/app.js with src/appExample.js and see whether you can spot the critical difference.
 
 Once all your tests are passing, try opening src/runApp.html in your web browser to see how the application behaves. This will typically be your final step in each task. You can try running the application earlier, but you may see odd behaviors because your code wasn't finished until you passed all the tests.
 
