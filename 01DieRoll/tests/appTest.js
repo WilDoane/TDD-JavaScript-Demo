@@ -88,7 +88,14 @@ YUI().use('node', 'console', 'test', function(Y) {
         min = Math.min(min, rollDie());
       }
       Y.Assert.areEqual( 1, min, "The minimum possible die roll should be 1" );
-    }
+    },
+
+
+    "test that function main is declared" :
+    function () {
+      Y.Assert.areEqual( "function", typeof main, "You need a function that will allow users to exeute your code" );
+      Y.Assert.areEqual( 0, rollDie.length, "function main must have no input parameter" );
+    },
 
   });
 
