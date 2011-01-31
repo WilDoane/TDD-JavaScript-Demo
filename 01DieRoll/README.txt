@@ -15,7 +15,7 @@ Functions are small blocks of code that, ideally, perform a single task. This is
   alert(x);            // 60
   alert( sum(2, 3) );  // 5
 
-Functions may take one or more inputs (e.g., a and b in the sum function) and may return a value. 
+Functions may take zero or more inputs (e.g., a and b in the sum function) and may return a value. 
 
 
 [1] http://www.butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod
