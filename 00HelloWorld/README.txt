@@ -90,7 +90,7 @@ At the moment, greetings() doesn't return anything. To DTSTTCPW, we need to revi
 
 Note that last one carefully. It's a string, so the computer treats it as only a sequence of characters. It's NOT a number, as far as the computer is concerned, just like a photograph of a car is not a car. A string of digit characters is not a number. You'll revisit this distinction in the next few tasks.
 
-We could choose any sting value to return at this point, but there's a special, minimal string in most computer languages commonly called the EMPTY STRING or the NULL STRING and it's denoted as
+We could choose any string value to return at this point, but there's a special, minimal string in most computer languages commonly called the EMPTY STRING or the NULL STRING and it's denoted as
 
   ""  
 
