@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Learning to Program Using JavaScript and Test Driven Learning</title>
+  </head>
+  <body>
+    <div class="rounded-corners">
+      <table id="tasklist" border="3" cellspacing="5" cellpadding="15">
+        <tr><th>Task</th><th>Description</th><th>Tests</th><th>Application</th></tr>
+      </table>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+      var i, task, tasks = ["00HelloWorld", "01DieRoll", "02GuessingGame"];
+      
+      for (i = 0; i < tasks.length; i = i + 1) {
+        task = "<tr>" +
+               "<td>" + tasks[i] + "</td>" +
+               "<td><a href='" + tasks[i] + "/README.txt'>README.txt</a></td>" +
+               "<td><a href='" + tasks[i] + "/tests/runTests.html'>tests/runTests.html</a></td>" +
+               "<td><a href='" + tasks[i] + "/src/runApp.html'>src/runApp.html</a></td>" +
+               "</tr>";
+
+        document.getElementById('tasklist').innerHTML += task;
+      }
+      
+    </script>
+
+  </body>
+</html>
