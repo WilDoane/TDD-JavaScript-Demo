@@ -7,28 +7,42 @@
                    "03LoopedGuessingGame", "04ParameterizedGuessingGame", "05UserSpecifiedMinMaxGame"
                   ];
     </script>
-  </head>
-  <body>
-    <div class="rounded-corners">
-      <table id="tasklist" border="3" cellspacing="5" cellpadding="15">
-        <tr><th>Task</th><th>Description</th><th>Tests</th><th>Application</th></tr>
-      </table>
-    </div>
-    <script type="text/javascript" charset="utf-8">
-      
-      for (i = 0; i < tasks.length; i = i + 1) {
-        
-        task = "<tr>" +
-               "<td>" + tasks[i].replace(/[A-Z]/g, " $&") + "</td>" +
-               "<td><a href='" + tasks[i] + "/README.txt'>README.txt</a></td>" +
-               "<td><a href='" + tasks[i] + "/tests/runTests.html'>tests/runTests.html</a></td>" +
-               "<td><a href='" + tasks[i] + "/src/runApp.html'>src/runApp.html</a></td>" +
-               "</tr>";
-
-        document.getElementById('tasklist').innerHTML += task;
+    <style type="text/css" media="screen">
+      #content {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 800px;
       }
       
-    </script>
+      th {
+        background-color: #ccccee;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <h1>Test-Driven Learning (TDL)<br />Introduction to JavaScript</h1>
+      <table id="tasklist" border="3" cellspacing="5" cellpadding="15">
+        <tr><th>Task</th><th>Description</th><th>Tests</th><th>Application</th></tr>
+        <tr><td>TDD JavaScript Overview</td><td><a target='_blank' href='README.txt'>README.txt</a></td><td colspan='2'>Find out about how this resource is organized and how you're expected to use it.</td></tr>
 
+        <script type="text/javascript" charset="utf-8">
+      
+          for (i = 0; i < tasks.length; i = i + 1) {
+        
+            task = "<tr>" +
+                   "<td>" + tasks[i].replace(/[A-Z]/g, " $&") + "</td>" +
+                   "<td><a target='_blank' href='" + tasks[i] + "/README.txt'>README.txt</a></td>" +
+                   "<td><a target='_blank' href='" + tasks[i] + "/tests/runTests.html'>tests/runTests.html</a></td>" +
+                   "<td><a target='_blank' href='" + tasks[i] + "/src/runApp.html'>src/runApp.html</a></td>" +
+                   "</tr>";
+
+            document.getElementById('tasklist').innerHTML += task;
+          }
+      
+        </script>
+      </table>
+    </div>
   </body>
 </html>

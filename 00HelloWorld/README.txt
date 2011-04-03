@@ -48,7 +48,7 @@ Now, rerun the tests by switching to your browser and clicking the reload button
   
   Unexpected: null (object)
 
-This suggests that, even though authorsName is declared, it is not yet defined. "Unexpected: null" tells you that when the test checked the value of authorsName, rather then the expected value (something of the general form "Jane Doe") it found null– JavaScript's term for "nothing".
+This suggests that, even though authorsName is declared, it is not yet defined. "Unexpected: null" tells you that when the test checked the value of authorsName, rather then the expected value (something of the general form "Jane Doe") it found null: JavaScript's term for "nothing".
 
 To pass this test, you need to modify the code you've already written, but only slightly, to include a value for authorsName
 

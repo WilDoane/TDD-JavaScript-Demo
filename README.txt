@@ -32,11 +32,11 @@ While this is obviously not a very accurate function at the moment (surely not e
 
 At some point, while tests are GREEN, it may be desirable to change the organization of our code (without trying to add any functionality). This is referred to as REFACTORING and can be done safely, given that we can re-run our tests to ensure the continued proper behavior of our code after each change we make. There are even collections of REFACTORING PATTERNS that have been published that can help guide us as we make changes to code, but more on that later.
 
-This cycle– RED-GREEN-REFACTOR– is at the heart of test-driven development. It's a way of requiring programmers to think about how their code should behave before they begin to write the code itself. It provides a structure within which we are free to improve our code, so long as our tests continue to pass.
+This cycle-- RED-GREEN-REFACTOR-- is at the heart of test-driven development. It's a way of requiring programmers to think about how their code should behave before they begin to write the code itself. It provides a structure within which we are free to improve our code, so long as our tests continue to pass.
 
 Any time a test goes from RED to GREEN, that's a good thing (assuming our tests are well written). However, when a test goes from GREEN to RED, we've broken some behavior. We need to stop, figure out why the test now fails, and fix the problem, before moving on.
 
-TDL affords instructors the benefit of being able to encode their expectations for programming projects (thus providing an automatic assessment tool when students submit their work) and affords students the ability to get immediate feedback on the state of their code at any time of day or night. Students need not wonder whether their code meets expectations– they can simply run the tests. As a benefit, students develop habits valuable in collaborative coding contexts such as TDD, functional decomposition, unit testing, not breaking the build, etc.
+TDL affords instructors the benefit of being able to encode their expectations for programming projects (thus providing an automatic assessment tool when students submit their work) and affords students the ability to get immediate feedback on the state of their code at any time of day or night. Students need not wonder whether their code meets expectations-- they can simply run the tests. As a benefit, students develop habits valuable in collaborative coding contexts such as TDD, functional decomposition, unit testing, not breaking the build, etc.
 
 
 THIS REPOSITORY
@@ -102,7 +102,7 @@ Once your tests are green, you can open the runApp.html file in the src/ directo
 PLAIN TEXT EDITORS
 ==================
 
-SOURCE CODE– the code humans write that is then INTERPRETED or COMPILED by the computer in order to create OBJECT CODE, which can be executed by the computer– is just plain text. PLAIN TEXT is a technical term of art that refers to a very simple file format that contains only letters, numbers, punctuation, and whitespace characters and is NOT a word processor file format. Word processor files, even if you've only typed text and saved the file, contain additional information such as font details, printing details, page dimensions, and so on. A plain text file contains nothing but the characters you type.
+SOURCE CODE-- the code humans write that is then INTERPRETED or COMPILED by the computer in order to create OBJECT CODE, which can be executed by the computer-- is just plain text. PLAIN TEXT is a technical term of art that refers to a very simple file format that contains only letters, numbers, punctuation, and whitespace characters and is NOT a word processor file format. Word processor files, even if you've only typed text and saved the file, contain additional information such as font details, printing details, page dimensions, and so on. A plain text file contains nothing but the characters you type.
 
 There are many plain text editors available for free; your computer may already have one installed (Notepad or TextEdit, for example). Programmers tend to prefer plain text editors that provide certain kinds of support that help visualize the source code: line numbers, syntax coloring, etc.
 
@@ -120,7 +120,7 @@ Most modern web browsers provide special purpose DEBUGGERS to help programmers s
 
   first computer bug
 
-you'll likely see images of a journal page belonging to Grace Hopper– an early computer programmer and later a Rear Admiral in the United States Navy– and taped to the page is a bug she found.
+you'll likely see images of a journal page belonging to Grace Hopper-- an early computer programmer and later a Rear Admiral in the United States Navy-- and taped to the page is a bug she found.
 
 Here are the steps to display a modern debugger in several popular browsers. Some of them provide better debugging capabilities than others; which you ultimately use is up to you.
 
