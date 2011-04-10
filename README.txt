@@ -1,7 +1,7 @@
 OVERVIEW
 ========
 
-This is a programming exercise designed using a Test-Driven Learning (TDL) approach, developed by William E. J. Doane and Brian A. Danielak. TDL is based on the agile software development practice of Test-Driven Development (TDD) in the service of teaching programming. 
+This is a programming exercise designed using an approach to instruction that incorporates instructor-written Test-Driven Development-style code, developed by William E. J. Doane and Brian A. Danielak, which has been designed to give pedagogically useful feedback to students as they learn to program. 
 
 In TDD, a programmer or a pair of programmers works to first write a UNIT TEST for some functionality desired in an application. In TDL, unit tests written by instructors serve to guide the student's code writing. Since the test is written before the code being tested, the test will initially fail when run. This is referred to as being RED: a failed test. 
 
