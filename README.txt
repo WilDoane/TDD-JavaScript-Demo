@@ -3,7 +3,7 @@ OVERVIEW
 
 This is a programming exercise designed using an approach to instruction that incorporates instructor-written Test-Driven Development-style code, developed by William E. J. Doane and Brian A. Danielak, which has been designed to give pedagogically useful feedback to students as they learn to program. 
 
-In TDD, a programmer or a pair of programmers works to first write a UNIT TEST for some functionality desired in an application. In TDL, unit tests written by instructors serve to guide the student's code writing. Since the test is written before the code being tested, the test will initially fail when run. This is referred to as being RED: a failed test. 
+In TDD, a programmer or a pair of programmers works to first write a UNIT TEST for some functionality desired in an application. In our approach, unit tests written by instructors serve to guide the student's code writing. Since the test is written before the code being tested, the test will initially fail when run. This is referred to as being RED: a failed test. 
 
 Once a test fails, the programmer (or, if pair-programming, the other programmer) then writes just enough code to make the test pass. In other words, you "do the simplest thing that can possibly work" (DTSTTCPW -- a motto of the Agile Development community) to make the test pass. Passing a test is referred to as being GREEN. Consider a test which says:
 
@@ -36,7 +36,7 @@ This cycle-- RED-GREEN-REFACTOR-- is at the heart of test-driven development. It
 
 Any time a test goes from RED to GREEN, that's a good thing (assuming our tests are well written). However, when a test goes from GREEN to RED, we've broken some behavior. We need to stop, figure out why the test now fails, and fix the problem, before moving on.
 
-TDL affords instructors the benefit of being able to encode their expectations for programming projects (thus providing an automatic assessment tool when students submit their work) and affords students the ability to get immediate feedback on the state of their code at any time of day or night. Students need not wonder whether their code meets expectations-- they can simply run the tests. As a benefit, students develop habits valuable in collaborative coding contexts such as TDD, functional decomposition, unit testing, not breaking the build, etc.
+This approach affords instructors the benefit of being able to encode their expectations for programming projects (thus providing an automatic assessment tool when students submit their work) and affords students the ability to get immediate feedback on the state of their code at any time of day or night. Students need not wonder whether their code meets expectations-- they can simply run the tests. As a benefit, students develop habits valuable in collaborative coding contexts such as TDD, functional decomposition, unit testing, not breaking the build, etc.
 
 
 THIS REPOSITORY
