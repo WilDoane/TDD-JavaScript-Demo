@@ -78,7 +78,7 @@ YUI().use('node', 'console', 'test', function(Y) {
       for(i = 0; i < 100000; i = i + 1) {
         max = Math.max(max, rollDie());
       }
-      Y.Assert.areEqual( 6, max, "The maximimum possible die roll should be 6" );
+      Y.Assert.areEqual( 6, max, "The maximum possible die roll should be 6" );
     },
 
     "test that the lowest rolled value is 1" :
@@ -93,7 +93,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
     "test that function main is declared" :
     function () {
-      Y.Assert.areEqual( "function", typeof main, "You need a function that will allow users to exeute your code" );
+      Y.Assert.areEqual( "function", typeof main, "You need a function that will allow users to execute your code" );
       Y.Assert.areEqual( 0, rollDie.length, "function main must have no input parameter" );
     },
 
