@@ -102,7 +102,7 @@ YUI().use('node', 'console', 'test', function(Y) {
 
   function logResultsToServer(data){
     var testResults, serverReporter;
-    
+        
     testResults = Y.Test.Runner.getResults();
     serverReporter = new Y.Test.Reporter("http://nwghost.com/tdd-collector.php", Y.Test.Format.TAP);
     serverReporter.addField("authorsName", authorsNameExists() ? authorsName : "UNKNOWN AUTHOR");
@@ -115,7 +115,9 @@ YUI().use('node', 'console', 'test', function(Y) {
 
   reporter.render("#testReport");
   Y.Test.Runner.add(unitTests);
-  Y.Test.Runner.subscribe(Y.Test.Runner.COMPLETE_EVENT, logResultsToServer);
+  if ( !( isDeclared("phoneHome") && (phoneHome === false) ) ) {
+    Y.Test.Runner.subscribe(Y.Test.Runner.COMPLETE_EVENT, logResultsToServer);
+  } 
   Y.Test.Runner.run();
   
  });

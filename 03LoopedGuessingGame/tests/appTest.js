@@ -173,7 +173,9 @@ YUI().use('node', 'console', 'test', function(Y) {
 
   reporter.render("#testReport");
   Y.Test.Runner.add(unitTests);
-  Y.Test.Runner.subscribe(Y.Test.Runner.COMPLETE_EVENT, logResultsToServer);
+  if ( !( isDeclared("phoneHome") && (phoneHome === false) ) ) {
+    Y.Test.Runner.subscribe(Y.Test.Runner.COMPLETE_EVENT, logResultsToServer);
+  } 
   Y.Test.Runner.run();
   
  });

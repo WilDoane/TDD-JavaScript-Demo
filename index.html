@@ -15,6 +15,10 @@
         width: 800px;
       }
       
+      #notice {
+        text-align: left;
+      }
+      
       th {
         background-color: #ccccee;
       }
@@ -43,6 +47,13 @@
       
         </script>
       </table>
+      <div id="notice">
+        <p><em>Privacy Notice:</em> These tasks contain a "phone home" feature that, if you are online while running the tests, sends information to a remote server including the value of the authorsName variable and which tests have failed or passed. The purpose of this information is to see the progress that learners make while working through the tasks and to spot difficulties that many learners encounter that might indicate that a task should be revised.</p>
+        <p>You can disable the phone home feature by including the following line at the top of your app.js files:</p>
+        <pre>
+          var phoneHome = false;
+        </pre>
+      </div>
     </div>
   </body>
 </html>
