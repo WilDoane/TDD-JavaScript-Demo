@@ -1,7 +1,7 @@
 OVERVIEW
 ========
 
-This is a programming exercise designed using an approach to instruction that incorporates instructor-written Test-Driven Development-style code, developed by William E. J. Doane and Brian A. Danielak, which has been designed to give pedagogically useful feedback to students as they learn to program. 
+This is a programming exercise designed using an approach to instruction that incorporates instructor-written, Test-Driven Development-style code, developed by William E. J. Doane and Brian A. Danielak, which has been designed to give pedagogically useful feedback to students as they learn to program. 
 
 In TDD, a programmer or a pair of programmers works to first write a UNIT TEST for some functionality desired in an application. In our approach, unit tests written by instructors serve to guide the student's code writing. Since the test is written before the code being tested, the test will initially fail when run. This is referred to as being RED: a failed test. 
 
@@ -38,9 +38,38 @@ Any time a test goes from RED to GREEN, that's a good thing (assuming our tests 
 
 This approach affords instructors the benefit of being able to encode their expectations for programming projects (thus providing an automatic assessment tool when students submit their work) and affords students the ability to get immediate feedback on the state of their code at any time of day or night. Students need not wonder whether their code meets expectations-- they can simply run the tests. As a benefit, students develop habits valuable in collaborative coding contexts such as TDD, functional decomposition, unit testing, not breaking the build, etc.
 
-
-THIS REPOSITORY
+WHY JAVASCRIPT?
 ===============
+
+The question of which programming language to use for introducing newcomers to programming concepts is a long-standing debate; there is unlikely to be a correct answer. One chooses a programming language based on the problem domain: most languages have been designed or evolved to serve a specific purpose... to solve some broad type of problem.
+
+JavaScript is a language that is most widely used in Web development. Until 2009, it was used primarily in the user's Web browser. Projects such as V8 and Node.js are allowing programmers to use JavaScript more widely, too.
+
+If you've used http://maps.google.com or almost any other dynamic website, then you have interacted with a JavaScript-based tool.
+
+JavaScript is installed in all popular Web browsers, so you already have it installed on your computer.
+
+Also, JavaScript, like most programming languages, uses "source code" files that can be written using any plain text editor (but more on that below).
+
+
+JAVASCRIPT REFERENCE
+====================
+
+As you work your way through the tasks, you'll likely need to look-up additional JavaScripts functions and examples. For example, when writing code to roll a die, you will likely need to generate a random number. Most programming languages have a function that does this, but the details of how to use those functions changes from one language to the next.
+
+To find information about a language feature, you can often search the Web for it, being sure to include the name of the language you're programming in:
+
+  javascript random number
+  
+A more structured resource for JavaScript exists at
+
+  https://developer.mozilla.org/en/JavaScript/Reference
+  
+where, for example, you can look-up "Math" and then "random"-- language features are often presented in that sort of hierarchic structure.
+
+
+ABOUT THIS COLLECTION OF CODE
+=============================
 
 This repository is organized into distinct tasks. At the highest level, you'll find a list of project directories with various names, this README.txt file, and the yui/ directory. 
 
@@ -97,6 +126,7 @@ You can (and SHOULD!) reload runTests.html often in order to re-run the tests. A
 
 Once your tests are green, you can open the runApp.html file in the src/ directory in order to see your application running in the browser.
 
+When one task is closely related to the previous task, you should begin by copying your previous app.js file from the src/ directory of the previous task to the src/ directory of the new task.
 
 
 PLAIN TEXT EDITORS
