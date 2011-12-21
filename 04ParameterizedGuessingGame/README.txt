@@ -5,13 +5,13 @@ In this task, you'll revise your code so that instead of using "magic numbers" s
 
 For example, a non-parameterized function might look something like
 
-  function sayItFast() {
+  var sayItFast = function () {
     var i = 0;
     while ( i < 5 ) {
       alert( "double bubble" );
       i = i + 1;
     }
-  }
+  };
   
 When I call sayItFast() using
 
@@ -23,13 +23,13 @@ Similarly, the only message sayItFast() can output is the string literal "double
 
 As an alternative, a parameterized version of this function might look something like
 
-  function sayItFast( times, message ) {
+  var sayItFast = function ( times, message ) {
     var i = 0;
     while ( i < times ) {
       alert( message );
       i = i + 1;
     }
-  }
+  };
 
 Here, the number of times you want the message to repeat and the message to be output are EXTRACTED from the body of the function to the PARAMETER LIST of the function: the list of inputs the function accepts.
 

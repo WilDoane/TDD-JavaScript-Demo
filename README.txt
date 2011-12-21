@@ -24,9 +24,9 @@ There may well be other requirements for computeGPA(), but as disciplined TDD pr
 
 So, let's DTSTTCPW. The simplest thing that could be written to pass this test (in JavaScript) is:
 
-  function computeGPA() {
+  var computeGPA = function () {
     return 0;
-  }
+  };
 
 While this is obviously not a very accurate function at the moment (surely not everyone's GPA is zero!), it would pass the test. In other words, we would get to GREEN with respect to that test. Other tests would then refine how computeGPA behaves, forcing us to improve the function's IMPLEMENTATION (the code that appears within the function).
 

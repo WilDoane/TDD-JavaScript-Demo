@@ -8,22 +8,22 @@ YUI().use('node', 'console', 'test', function(Y) {
   //
   // SUPPORT FUNCTIONS
   //
-  function isDeclared(objName) {
+  var isDeclared = function (objName) {
     return ( window.hasOwnProperty(objName) ) ? true : false;
-  }
+  };
 
   // Should always be called as the second part of && so that eval(objName) 
   // isn't attempted on undeclared ojbects
   //
   // if ( isDeclared("x") && isDefined("x") )
   //
-  function isDefined(objName) {
+  var isDefined = function (objName) {
     return ( "undefined" !== typeof eval(objName) ) ? true : false;
-  }
+  };
 
-  function authorsNameExists() {
+  var authorsNameExists = function () {
     return ( isDeclared("authorsName") && isDefined("authorsName") ) ? true : false;
-  }
+  };
 
   unitTests = new Y.Test.Case({
  
@@ -100,14 +100,14 @@ YUI().use('node', 'console', 'test', function(Y) {
   });
 
 
-  function logResultsToServer(data){
+  var logResultsToServer = function (data){
     var testResults, serverReporter;
         
     testResults = Y.Test.Runner.getResults();
     serverReporter = new Y.Test.Reporter("http://nwghost.com/tdd-collector.php", Y.Test.Format.TAP);
     serverReporter.addField("authorsName", authorsNameExists() ? authorsName : "UNKNOWN AUTHOR");
     serverReporter.report(testResults);
-  }
+  };
 
   reporter = new Y.Console({
       newestOnTop: false

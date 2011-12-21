@@ -1,9 +1,9 @@
 var authorsName = "William Doane";
 
-function rollDie() {
+var rollDie = function () {
   return Math.floor(Math.random() * 6) + 1;
-}
+};
 
-function main() {
+var main = function () {
   alert( 'You rolled a ' + rollDie() );
-}
+};

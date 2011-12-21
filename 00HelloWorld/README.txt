@@ -72,11 +72,11 @@ FUNCTIONS are short blocks of source code that
 
 at least in JavaScript; other programming languages may differ slightly.
 
-There are several ways to define functions in JavaScript. For now, you'll use the most basic method and, later, you'll improve upon that. You'll need to add this below the definition of authorsName
+There are several ways to define functions in JavaScript. For now, you'll use the function-as-object method. You'll need to add this below the definition of authorsName
   
-  function greetings() {
+  var greetings = function () {
   
-  }
+  };
 
 Switch to your browser and rerun the tests. You should now be passing that test, as well. So, we check the next failed test
 
@@ -104,9 +104,9 @@ is not the same as the empty string
 
 So, to DTSTTCPW for this test, let's return the empty string
 
-  function greetings() {
+  var greetings = function () {
     return "";
-  }
+  };
 
 Switch to your browser and rerun the tests. You should now be passing that test, as well. So, we check the final failed test
 
@@ -131,9 +131,9 @@ and
 
 So, once again, we need to revise greetings()
 
-  function greetings() {
-    return "Hello, " + authorsName;
-  }
+  var greetings = function () {
+      return "Hello, " + authorsName;
+  };
 
 Switch to your browser and rerun the tests. You should now be passing all tests!
 

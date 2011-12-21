@@ -1,5 +1,5 @@
 var authorsName = "William Doane";
 
-function greetings() {
+var greetings = function () {
   return "Hello, " + authorsName;
-}
+};

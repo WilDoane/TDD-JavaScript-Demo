@@ -7,9 +7,9 @@ Functions are small blocks of code that, ideally, perform a single task. This is
 
   var x;
   
-  function sum(a, b) {
+  var sum = function (a, b) {
     return a + b;
-  }
+  };
 
   x = sum(10, 20) * 2;
   alert(x);            // 60

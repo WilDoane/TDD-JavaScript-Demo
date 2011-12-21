@@ -2,27 +2,27 @@ var authorsName = "William Doane",
     lowest = 1,
     highest = 6;
 
-function rollDie(min, max) {
+var rollDie = function (min, max) {
   return Math.floor(Math.random() * max) + min;
-}
+};
 
-function getUserGuess(min, max) {
+var getUserGuess = function (min, max) {
   return prompt("Guess a number from " + min + " to " + max);
-}
+};
 
-function convertToDecimal(str) {
+var convertToDecimal = function (str) {
   return parseInt(str, 10);
-}
+};
 
-function isWinner(num, guess) {
+var isWinner = function (num, guess) {
   if (num === guess) {
    return true;
   } else {
    return false;
   }
-}
+};
 
-function main() {
+var main = function () {
   var num, guess;
   
   num = rollDie(lowest, highest);
@@ -37,4 +37,4 @@ function main() {
 
   alert("You win!");
   
-}
+};

@@ -1,26 +1,26 @@
 var authorsName = "William Doane";
 
-function rollDie() {
+var rollDie = function () {
   return Math.floor(Math.random() * 6) + 1;
-}
+};
 
-function getUserGuess() {
+var getUserGuess = function () {
   return prompt("Guess a number from 1 to 6");
-}
+};
 
-function convertToDecimal(str) {
+var convertToDecimal = function (str) {
   return parseInt(str, 10);
-}
+};
 
-function isWinner(num, guess) {
+var isWinner = function (num, guess) {
   if (num === guess) {
    return true;
   } else {
    return false;
   }
-}
+};
 
-function main() {
+var main = function () {
   var num, guess;
   
   num = rollDie();
@@ -33,4 +33,4 @@ function main() {
     alert("Sorry. The answer was: " + num);
   }
   
-}
+};
