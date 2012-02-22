@@ -140,7 +140,8 @@ There are many plain text editors available for free; your computer may already 
 
   Windows     Notepad++        http://notepad-plus-plus.org/
 
-  Linux
+  Linux       vim              http://www.vim.org/
+              Geany            http://www.geany.org/
 
 
 WEB BROWSER'S DEBUGGING TOOLS
