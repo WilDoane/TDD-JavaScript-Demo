@@ -101,10 +101,10 @@
           for (i = 0; i < tasks.length; i = i + 1) {
         
             task = "<tr>" +
-                   "<td>" + tasks[i].replace(/[A-Z]/g, " $&") + "</td>" +
-                   "<td><a target='_blank' href='" + tasks[i] + "/README.txt'>README.txt</a></td>" +
-                   "<td><a target='_blank' href='" + tasks[i] + "/tests/runTests.html'>tests/runTests.html</a></td>" +
-                   "<td><a target='_blank' href='" + tasks[i] + "/src/runApp.html'>src/runApp.html</a></td>" +
+                   "<td id='columnone'>" + tasks[i].replace(/[A-Z]/g, " $&") + "</td>" +
+                   "<td><a target='_blank' href='" + tasks[i] + "/README.txt'>README</a></td>" +
+                   "<td><a target='_blank' href='" + tasks[i] + "/tests/runTests.html'>Run Test</a></td>" +
+                   "<td><a target='_blank' href='" + tasks[i] + "/src/runApp.html'>Run App</a></td>" +
                    "</tr>";
 
             document.getElementById('tasklist').innerHTML += task;
