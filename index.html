@@ -8,38 +8,103 @@
                   ];
     </script>
     <style type="text/css" media="screen">
-      #content {
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        width: 800px;
+
+      
+      h1 {
+      	padding-top: 5px;
+      	padding-bottom: 5px;
+      	font-family: Arial;
+      	font-variant: small-caps;
       }
       
+      table {
+      	border-collapse: collapse;
+      	border: 0px;
+      	font-family: Sans-serif;	
+      }
+      
+      #content {
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 15%;
+        margin-right: 15%;
+        width: auto;
+        background-color: #ffffff;
+      }
+      
+     #tasklist {
+     	margin-left: auto;
+     	margin-right: auto;
+     }
+      
       #notice {
-        text-align: left;
+      	margin-top: 50px;
+      	font-family: Sans-serif;
+      	font-size: 12px;
+        text-align: center;
+      }
+      
+      pre {
+      	color: red;
       }
       
       th {
-        background-color: #ccccee;
+        background-color: #444444;
+        border: 1px solid black;
+        color: #ffffff;
+        text-align: left;
       }
+      
+      
+	 a:link {
+		color:#334488;
+		text-decoration:none;
+	 }
+	
+	 a:visited {
+		color:#884433;
+		text-decoration:none;
+  	 }
+	
+	 a:hover {
+		color:#338844;
+		text-decoration:none;
+	 }
+	
+	 a:active {
+		color:#bbbbbb;
+		text-decoration:none;
+	 }
+      
+      td {
+      	text-align: center;
+      	text-decoration:none;
+      }
+      
+      #columnone {
+      	text-align: left;
+      	background-color: #eaeaea;
+      }
+      
     </style>
   </head>
   <body>
+  	
     <div id="content">
       <h1>Test-Driven Learning (TDL)<br />Introduction to JavaScript</h1>
       <table id="tasklist" border="3" cellspacing="5" cellpadding="15">
         <tr><th>Task</th><th>Description</th><th>Tests</th><th>Application</th></tr>
-        <tr><td>TDD JavaScript Overview</td><td><a target='_blank' href='README.txt'>README.txt</a></td><td colspan='2'>Find out about how this resource is organized and how you're expected to use it.</td></tr>
+        <tr><td id='columnone'>TDD JavaScript Overview</td><td><a target='_blank' href='README.txt'>README</a></td><td colspan='2'>Find out about how this resource is organized and how you're expected to use it.</td></tr>
 
         <script type="text/javascript" charset="utf-8">
       
           for (i = 0; i < tasks.length; i = i + 1) {
         
             task = "<tr>" +
-                   "<td>" + tasks[i].replace(/[A-Z]/g, " $&") + "</td>" +
-                   "<td><a target='_blank' href='" + tasks[i] + "/README.txt'>README.txt</a></td>" +
-                   "<td><a target='_blank' href='" + tasks[i] + "/tests/runTests.html'>tests/runTests.html</a></td>" +
-                   "<td><a target='_blank' href='" + tasks[i] + "/src/runApp.html'>src/runApp.html</a></td>" +
+                   "<td id='columnone'>" + tasks[i].replace(/[A-Z]/g, " $&") + "</td>" +
+                   "<td><a target='_blank' href='" + tasks[i] + "/README.txt'>README</a></td>" +
+                   "<td><a target='_blank' href='" + tasks[i] + "/tests/runTests.html'>Run Test</a></td>" +
+                   "<td><a target='_blank' href='" + tasks[i] + "/src/runApp.html'>Run App</a></td>" +
                    "</tr>";
 
             document.getElementById('tasklist').innerHTML += task;
@@ -48,12 +113,13 @@
         </script>
       </table>
       <div id="notice">
-        <p><em>Privacy Notice:</em> These tasks contain a "phone home" feature that, if you are online while running the tests, sends information to a remote server including the value of the authorsName variable and which tests have failed or passed. The purpose of this information is to see the progress that learners make while working through the tasks and to spot difficulties that many learners encounter that might indicate that a task should be revised.</p>
+        <p><em><b>Privacy Notice:</b></em> These tasks contain a "phone home" feature that, if you are online while running the tests, sends information to a remote server including the value of the authorsName variable and which tests have failed or passed. The purpose of this information is to see the progress that learners make while working through the tasks and to spot difficulties that many learners encounter that might indicate that a task should be revised.</p>
         <p>You can disable the phone home feature by including the following line at the top of your app.js files:</p>
         <pre>
           var phoneHome = false;
         </pre>
       </div>
     </div>
+    
   </body>
 </html>
