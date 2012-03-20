@@ -55,7 +55,11 @@ YUI().use('node', 'console', 'test', function(Y) {
     "test that function person is declared" :
     function () {
       Y.Assert.areEqual( "function", typeof person, "You need a function that will serve as your object constructor. This function must be named person, and defined in app.js located in the src/ directory" );
-      Y.Assert.areEqual( 0, person.length, "function person must have no input parameter" );
+     },
+     
+    "test that function person has proper parameters" :
+    function () {
+      Y.Assert.areEqual( 5, person.length, "function person must have five input parameters: firstname, lastname, age, haircolor, eyecolor" );
      },
 
   });
