@@ -107,7 +107,7 @@ YUI().use('node', 'console', 'test', function(Y) {
     "test that function getUserGuess is declared" :
     function () {
       Y.Assert.areEqual( "function", typeof getUserGuess, "You need a function that will prompt the user for input." );
-      Y.Assert.areEqual( 2, getUserGuess.length, "function getUserGuess must now have TWO input parameters: the minimum and maximumnumbers to display to the uset" );
+      Y.Assert.areEqual( 2, getUserGuess.length, "function getUserGuess must now have TWO input parameters: the minimum and maximumnumbers to display to the user" );
      }, 
 
 
