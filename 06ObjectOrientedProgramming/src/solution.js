@@ -1,5 +1,5 @@
 var authorsName = "William Doane";
 
-var person = function () {
+var person = function (firstname,lastname,age,haircolor,eyecolor) {
 
 };
