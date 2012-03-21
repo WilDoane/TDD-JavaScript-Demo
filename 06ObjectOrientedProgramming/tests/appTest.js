@@ -57,10 +57,11 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.isObject( person, "You need to define a new Object called person declared in app.js located in the src/ directory" );
      },
      
-     "test that person has an age attribute" :
+     "test that person has a first name attribute" :
      function () {
-      Y.Assert.isString( person.age, "You must define an age attributed to the object person. Attributions should be defined as strings" );
+      Y.Assert.isString( person.age, "You must define firstName as an attribute to the object person. Attributions should be defined as strings" );
      },
+     
      
      
 
