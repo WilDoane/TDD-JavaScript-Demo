@@ -72,6 +72,11 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.isString( person.age, "You must define age as an attribute to the object person. Attributions should be defined as strings" );
      },
      
+	"test that function main is declared" :
+    function () {
+      Y.Assert.areEqual( "function", typeof main, "You need a function that will allow users to execute your code" );
+      Y.Assert.areEqual( 0, main.length, "function main must have no input parameter" );
+    },
 
 	
 
