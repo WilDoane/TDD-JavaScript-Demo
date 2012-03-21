@@ -74,10 +74,10 @@ YUI().use('node', 'console', 'test', function(Y) {
      
 	"test that function main is declared" :
     function () {
-      Y.Assert.areEqual( "function", typeof main, "You need a function that will allow users to execute your code" );
+      Y.Assert.areEqual( "function", typeof main, "You need a function that will allow users to execute your code. Function main should return a prompt containing attributes of objects, eg. person.hairColor" );
       Y.Assert.areEqual( 0, main.length, "function main must have no input parameter" );
     },
-
+    
 	
 
   });
