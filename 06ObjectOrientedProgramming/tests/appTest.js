@@ -67,6 +67,10 @@ YUI().use('node', 'console', 'test', function(Y) {
       Y.Assert.isString( person.lastName, "You must define lastName as an attribute to the object person. Attributions should be defined as strings" );
      },
      
+     "test that person has an age attribute" :
+     function () {
+      Y.Assert.isString( person.age, "You must define age as an attribute to the object person. Attributions should be defined as strings" );
+     },
      
 
 	
